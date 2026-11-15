@@ -25,7 +25,7 @@ import { url } from '../../../data/url';
   </section>
   <section class="wrap row">
     <p class="chapter">On the example</p>
-    <div class="tbl"><table><thead><tr><th>Unknown</th><th>Gate result</th><th>What happens</th></tr></thead><tbody><tr><td>Budget (4 people)</td><td>Notebook knows ~₹600</td><td>Filled silently</td></tr><tr><td>Seats for 4</td><td>Every place left seats 4</td><td>Not asked</td></tr><tr><td>Spice level</td><td>Matters, cheap to fix</td><td>“Assuming medium spice”</td></tr><tr><td>Indoor or outdoor</td><td>Picks come out the same</td><td>Not asked</td></tr><tr><td>Budget (10 people)</td><td>Changes picks, costly if wrong</td><td>Asked: “Roughly how much each?”</td></tr></tbody></table></div>
+    <div class="tbl" tabindex="0"><table><thead><tr><th>Unknown</th><th>Gate result</th><th>What happens</th></tr></thead><tbody><tr><td>Budget (4 people)</td><td>Notebook knows ~₹600</td><td>Filled silently</td></tr><tr><td>Seats for 4</td><td>Every place left seats 4</td><td>Not asked</td></tr><tr><td>Spice level</td><td>Matters, cheap to fix</td><td>“Assuming medium spice”</td></tr><tr><td>Indoor or outdoor</td><td>Picks come out the same</td><td>Not asked</td></tr><tr><td>Budget (10 people)</td><td>Changes picks, costly if wrong</td><td>Asked: “Roughly how much each?”</td></tr></tbody></table></div>
   </section>
   <section class="wrap row">
     <p class="chapter">What we learned</p>
@@ -36,6 +36,7 @@ import { url } from '../../../data/url';
     <details class="eng">
       <summary>The gate</summary>
       <div class="prose">
+        <p class="muted">Numbers below are proposed starting values, to be tuned.</p>
         <pre class="code">ask(slot) = not fillable(slot)
           and changes_top_k(slot)            # re-rank under each answer
           and cost_if_wrong(slot) > τ

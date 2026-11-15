@@ -10,7 +10,7 @@ const services = [
   ['Google Geocoding', 'Turns “near Besant Nagar” or a typed address into a point on the map.', 'When a place is named', 'Not stored beyond the conversation.'],
   ['Weather', 'Rain or heat this evening, so an outdoor plan can be swapped.', 'Plans that include outdoors', 'Not stored.'],
   ['Google Maps SDK', 'The map inside the app: pins, the line, the timeline.', 'Showing a plan', 'Nothing.'],
-  ['Claude (the AI)', 'Understands the sentence; writes the short reasons at the end.', 'Twice per reply', 'Nothing kept by the provider beyond the call.'],
+  ['Claude (the AI)', 'Understands the sentence; writes the short reasons at the end.', 'Twice per reply', 'We keep the conversation card, not the raw call.'],
   ['Our database', 'The notebook for each person; our own facts: veg confirmed, cost bands, seats, clubs.', 'Every plan', 'Ours. This is the moat.'],
   ['Organisers and partners', 'Events, clubs, seats and offers we can’t get from Google.', 'When an event fits', 'Ours, with a source and a date.'],
   ['Push notifications', 'The Thursday nudge, the re-check before leaving, the recap.', 'A few times a week', 'Device token only.'],
@@ -18,7 +18,7 @@ const services = [
 ---
 <Base slug="outside/" title="What we rely on outside" description="Which outside services The Cousin uses, what each does, and how asking, recommending, narrowing, routing and the map work.">
   <header class="wrap phead">
-    <p class="chapter">03 · What we rely on outside</p>
+    <p class="chapter">03b · What we rely on outside</p>
     <h1 class="h1" data-split="lines" data-intro>Google knows the city. We know the person. Code decides.</h1>
     <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
       <p class="lede muted">Our algorithms don’t work alone. They lean on a few outside services for maps, live hours and travel times, and on an AI model for language. None of them is asked to choose the plan.</p>
@@ -33,7 +33,7 @@ const services = [
 
   <section class="wrap row">
     <p class="chapter">The services</p>
-    <div class="tbl">
+    <div class="tbl" tabindex="0">
       <table>
         <thead><tr><th>Service</th><th>What it gives us</th><th>When it’s called</th><th>What we keep</th></tr></thead>
         <tbody>{services.map(([a, b, c, d]) => <tr><td><b>{a}</b></td><td>{b}</td><td>{c}</td><td>{d}</td></tr>)}</tbody>
@@ -45,7 +45,7 @@ const services = [
     <p class="chapter">Google’s rules</p>
     <div class="prose">
       <p>Google’s terms let us keep place IDs indefinitely, but not copies of names, hours, ratings or photos beyond a short cache. So our database stores the ID plus our own facts (veg confirmed by the place, cost band, seats, clubs), and fetches the rest fresh when a plan is made. Results must be shown on a Google map, with attribution.</p>
-      <p class="muted">Rough cost per reply: about two AI calls and three Google calls. Searching only near the person, and only sending 12 places to the travel-time matrix, keeps this small.</p>
+      <p class="muted">Rough cost per reply: about two AI calls and a handful of Google calls. Searching only near the person, and only sending 12 places to the travel-time matrix, keeps this small.</p>
     </div>
   </section>
 
@@ -54,7 +54,7 @@ const services = [
     <div class="stack">
       <div class="qa">
         <h3>How does it ask counter-questions?</h3>
-        <p>It doesn’t ask by default. After the AI cuts the sentence into pieces, code checks three gates: is a missing piece something that would change the pick (budget for 10 people does; preferred table side doesn’t), can it be guessed safely from the notebook or today, and has this person already been asked something this turn. Only if all three say “ask” does it ask one short question, with tap-able answers. Otherwise it plans with a stated guess: “Assuming you’re leaving from home.” <a href={url('algorithms/asking/')}>More on asking</a>.</p>
+        <p>It doesn’t ask by default. After the AI cuts the sentence into pieces, code checks three gates: can a missing piece be filled safely from the notebook or today; would the answer change the picks (budget for 10 people does; preferred table side doesn’t); and is a wrong guess expensive. Only if it can’t be filled, would change the picks, and is costly to get wrong does it ask, and then only one short question per reply, with tap-able answers. Otherwise it plans with a stated guess: “Assuming medium spice.” <a href={url('algorithms/asking/')}>More on asking</a>.</p>
       </div>
       <div class="qa">
         <h3>How does it know what to recommend?</h3>
@@ -62,7 +62,7 @@ const services = [
       </div>
       <div class="qa">
         <h3>How does it narrow down?</h3>
-        <p>Area first, then kind, then fences. Google Places is asked only for the right kind of place within reach of home and the deadline, which gives a few hundred. Then every fence runs in code: veg, budget, seats, open on arrival, home by 10. About 40 survive. Ranking keeps the best 6 dinners and 6 desserts. Only those 12 go on to routing.</p>
+        <p>Area first, then kind, then fences. Google Places is asked only for the right kind of place within reach of home and the deadline. It returns up to 20 places per call, so we run a few searches by kind and area and merge them with our own listings: a few hundred candidates. Then every fence runs in code: veg, budget, seats, open on arrival, home by 10. About 40 survive. Ranking keeps the best 6 dinners and 6 desserts. Only those 12 go on to routing.</p>
       </div>
       <div class="qa">
         <h3>How does the route order work?</h3>
@@ -81,7 +81,7 @@ const services = [
       <summary>Calls per reply and fallbacks</summary>
       <div class="prose">
         <pre class="code">1  Claude      parse sentence → pieces (JSON with types)
-2  Places      nearbySearch(kind, centre, radius)   ~200 results
+2  Places      searchNearby(kind, centre, radius) × a few   ≤ 20 each
 3  our DB      fences on our facts; magnets on notebook
 4  Routes      computeRouteMatrix(13 × 13, traffic)
 5  solver      36 pairs → best feasible plan

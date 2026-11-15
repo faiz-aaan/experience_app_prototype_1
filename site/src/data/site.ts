@@ -22,7 +22,7 @@ export const sections: Section[] = [
   { slug: '', n: '01', title: 'The product in one minute', short: 'The product', built: true },
   { slug: 'goals/', n: '02', title: 'Goals, non-goals and success', short: 'Goals', built: true },
   { slug: 'how-it-works/', n: '03', title: 'How it works: five stages', short: 'How it works', built: true },
-  { slug: 'outside/', n: '03', title: 'What we rely on outside', short: 'Outside services', built: true },
+  { slug: 'outside/', n: '03b', title: 'What we rely on outside', short: 'Outside services', built: true },
   { slug: 'algorithms/fences-and-magnets/', n: '04', title: 'Fences and magnets', short: 'Fences and magnets', group: 'The algorithms', built: true },
   { slug: 'algorithms/mix-and-variety/', n: '04', title: 'Safe, stretch, wild and variety', short: 'Mix and variety', group: 'The algorithms', built: true },
   { slug: 'algorithms/route-and-arc/', n: '04', title: 'Route puzzle and evening arc', short: 'Route and arc', group: 'The algorithms', built: true },

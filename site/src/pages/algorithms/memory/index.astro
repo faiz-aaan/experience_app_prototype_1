@@ -23,13 +23,14 @@ import { url } from '../../../data/url';
   </section>
   <section class="wrap row">
     <p class="chapter">Three ways to catch a change</p>
-    <div class="tbl"><table><thead><tr><th>Way</th><th>How it works</th><th>Caught in the test</th></tr></thead><tbody><tr><td>Listen</td><td>A passing mention (“joined a gym, up at 5 now”) updates the notebook at once</td><td>82% of changes, about 2 weeks</td></tr><tr><td>Monthly catch-up</td><td>A 20 second card: “still into late nights?”</td><td>95%, about 1 week</td></tr><tr><td>Surprise meter</td><td>Counts ideas passed on in a row and brings the catch-up forward</td><td>31% alone, about 5 weeks late</td></tr><tr><td>All together</td><td>Listen first, catch up monthly, meter only speeds the catch-up</td><td>99.5%, under a week</td></tr></tbody></table></div>
+    <div class="tbl" tabindex="0"><table><thead><tr><th>Way</th><th>How it works</th><th>Caught in the test</th></tr></thead><tbody><tr><td>Listen</td><td>A passing mention (“joined a gym, up at 5 now”) updates the notebook at once</td><td>82% of changes, about 2 weeks</td></tr><tr><td>Monthly catch-up</td><td>A 20 second card: “still into late nights?”</td><td>95%, about 1 week</td></tr><tr><td>Surprise meter</td><td>Counts ideas passed on in a row and brings the catch-up forward</td><td>31% alone, about 5 weeks late</td></tr><tr><td>Listen + catch-up</td><td>Both together; the meter, if used, only brings the catch-up forward</td><td>99.5%, about 1 week</td></tr></tbody></table></div>
   </section>
   <section class="wrap row">
     <p class="chapter">For engineers</p>
     <details class="eng">
       <summary>The update rule</summary>
       <div class="prose">
+        <p class="muted">Numbers below are proposed starting values, to be tuned.</p>
         <pre class="code">notebook ← (1 − α)·notebook + α·outcome      α ≈ 0.08
 mention → replace the line, flagged "said"
 meter: passed_in_a_row ≥ 3 → move catch-up to next session</pre>

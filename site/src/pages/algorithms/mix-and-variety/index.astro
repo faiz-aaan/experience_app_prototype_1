@@ -27,7 +27,7 @@ import { url } from '../../../data/url';
   </section>
   <section class="wrap row">
     <p class="chapter">On the example</p>
-    <div class="tbl"><table><thead><tr><th>Slot</th><th>Dinner</th><th>Why it’s here</th></tr></thead><tbody><tr><td>Safe</td><td>Kaveri thali place</td><td>South Indian, calm, loved last month</td></tr><tr><td>Stretch</td><td>A Gujarati thali house</td><td>Veg and calm, a cuisine tried once</td></tr><tr><td>Wild</td><td>A rooftop millet café</td><td>New idea, still veg, under ₹500 and on the way</td></tr></tbody></table></div><p class="muted">The wild slot is not on every reply. How often it appears, and which kinds of surprise, is learned per person: see <a href={url('algorithms/wild-cards/')}>wild cards</a>.</p>
+    <div class="tbl" tabindex="0"><table><thead><tr><th>Slot</th><th>Dinner</th><th>Why it’s here</th></tr></thead><tbody><tr><td>Safe</td><td>Kaveri thali place</td><td>South Indian, calm, loved last month</td></tr><tr><td>Stretch</td><td>A Gujarati thali house</td><td>Veg and calm, a cuisine tried once</td></tr><tr><td>Wild</td><td>A rooftop millet café</td><td>New idea, still veg, under ₹500 and on the way</td></tr></tbody></table></div><p class="muted">The wild slot is not on every reply. How often it appears, and which kinds of surprise, is learned per person: see <a href={url('algorithms/wild-cards/')}>wild cards</a>.</p>
   </section>
   <section class="wrap row">
     <p class="chapter">What we learned</p>
@@ -38,6 +38,7 @@ import { url } from '../../../data/url';
     <details class="eng">
       <summary>The re-ranking formula</summary>
       <div class="prose">
+        <p class="muted">Numbers below are proposed starting values, to be tuned.</p>
         <pre class="code">pick 1 = argmax score(x)
 pick k = argmax  λ·score(x) − (1−λ)·max_sim(x, picked)     # MMR
 λ = 0.7 for stretch;  wild drawn from novelty-weighted pool</pre>

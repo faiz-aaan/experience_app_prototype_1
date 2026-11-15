@@ -188,7 +188,7 @@ export const outsideFilm: FilmOpts = {
     [9.8, 'Our own code does the deciding: fences, magnets, the mix. No service is asked to choose.'],
     [11.4, 'Google Routes measures travel times between every pair. Our solver picks the stops and order.'],
     [16.2, 'Google draws the road path; the app shows pins, line and timeline on a Google map.'],
-    [18.8, 'About two AI calls and three Google calls per reply. Everything else is our code.'],
+    [18.8, 'About two AI calls and a handful of Google calls per reply. Everything else is our code.'],
   ],
   draw(c, t, W, H, nar, P) {
     const pad = nar ? 16 : 30, colX = (i: number) => pad + (i + 0.5) * (W - 2 * pad) / LN.length, top = 46, rowH = (H - top - 20) / STEPS.length;

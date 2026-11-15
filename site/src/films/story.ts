@@ -61,7 +61,7 @@ const GROWS: [string, string, string, string, string, string][] = [
   ['Matching by feel', 'tags', 'embeddings', 'embeddings', 'embeddings', 'ai'],
   ['Ranking', 'rules', 'rules + stats', 'trees*', 'deep model*', 'ml'],
   ['Wild cards', 'fixed mix', 'bandit', 'bandit', 'bandit', 'ml'],
-  ['Change of taste', 'listen + catch-up', '+ meter', '+ meter', '+ sequence model*', 'ml'],
+  ['Change of taste', 'listen + check-in', '+ meter', '+ meter', '+ sequence*', 'ml'],
 ];
 export const modelsFilm: FilmOpts = {
   dur: 21.5, still: 21.4, ratio: 0.56, tall: 1.2,
@@ -84,8 +84,9 @@ export const modelsFilm: FilmOpts = {
         const v = vals[k], changed = k > 0 && v !== vals[k - 1], ap = k < st ? 1 : seg(lt, 0.3, 1); if (ap <= 0) continue;
         const isML = /stats|trees|deep|bandit|meter|sequence/.test(v), isAI = /AI|embed/.test(v);
         c.font = F.m(nar ? 9.5 : 11.5, 600); const tw = Math.min(sw - 8, c.measureText(v).width + (nar ? 12 : 18));
+        c.save(); c.beginPath(); c.rect(colX + k * sw, y, sw - 6, rh); c.clip();
         c.globalAlpha = ap * (changed ? 1 : 0.32); rr(c, colX + k * sw, y + rh * 0.2, tw, rh * 0.58, 6); c.fillStyle = isML ? P.code : isAI ? P.turmeric : '#5C5C5C'; c.fill();
-        c.globalAlpha = ap; c.fillStyle = changed ? '#0B0B0B' : P.rice; if (changed && isML) c.fillStyle = '#FFFFFF'; c.fillText(v, colX + k * sw + (nar ? 6 : 9), y + rh * 0.58); c.globalAlpha = 1;
+        c.globalAlpha = ap; c.fillStyle = changed ? '#0B0B0B' : P.rice; if (changed && isML) c.fillStyle = '#FFFFFF'; c.fillText(v, colX + k * sw + (nar ? 6 : 9), y + rh * 0.58); c.globalAlpha = 1; c.restore();
       }
     });
     label(c, '* only if it beats the step before it in a live test', nar ? 10 : 22, H - 12, P.muted, nar ? 9 : 11, 'left', 400);

@@ -30,6 +30,6 @@ Every push to `main` builds the site and publishes it to GitHub Pages through `.
 
 ## Status
 
-The first slice is built: the product, goals, how it works, and fences and magnets. The remaining sections are listed in the menu as "next".
+All 13 sections are built, plus a page on the outside services we rely on. Pages marked "Open decision" are proposals for the founders to settle.
 
 Places, prices and people in examples are invented. Simulation results use synthetic people and rank ideas against each other; they don't predict real users.

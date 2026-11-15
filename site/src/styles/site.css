@@ -86,7 +86,7 @@ a:hover .roll > span + span, button:hover .roll > span + span { transform: trans
 .status i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: block; }
 .status.tested { color: var(--c-code); }
 .status.designed { color: var(--c-turmeric-ink); }
-.status.open { color: var(--c-kumkum); }
+.status.open { color: var(--c-kumkum-ink); }
 .door .status.tested { color: #7C9BFF; } .door .status.designed { color: var(--c-turmeric); } .door .status.open { color: #FF6B6E; }
 
 /* Tables */
@@ -107,7 +107,7 @@ td.num { font-variant-numeric: tabular-nums; font-family: var(--f-mono); font-si
 .pieces { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 .piece { font-size: 0.9rem; padding: 0.4rem 0.75rem; border-radius: 99px; border: 1px solid var(--c-line); background: var(--c-card); }
 .piece b { font: 600 0.66rem/1 var(--f-mono); letter-spacing: 0.04em; margin-right: 0.4rem; }
-.piece.find b { color: var(--c-turmeric-ink); } .piece.fence b { color: var(--c-kumkum); } .piece.magnet b { color: var(--c-code); }
+.piece.find b { color: var(--c-turmeric-ink); } .piece.fence b { color: var(--c-kumkum-ink); } .piece.magnet b { color: var(--c-code); }
 .door .piece { background: transparent; border-color: var(--c-door-line); }
 .door .piece.find b { color: var(--c-turmeric); } .door .piece.fence b { color: #FF6B6E; } .door .piece.magnet b { color: #7C9BFF; }
 

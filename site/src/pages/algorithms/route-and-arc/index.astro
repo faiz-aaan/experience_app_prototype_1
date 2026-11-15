@@ -10,7 +10,7 @@ import { url } from '../../../data/url';
     <h1 class="h1" data-split="lines" data-intro>The best evening is a set of stops in the right order.</h1>
     <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
       <p class="lede muted">The best dinner and the best dessert stop may be on opposite sides of the city. The route puzzle picks the pair that works together, in the order an evening should go.</p>
-      <Status s="tested" />
+      <Status s="designed" />
     </div>
   </header>
   <section class="wrap row">
@@ -26,7 +26,7 @@ import { url } from '../../../data/url';
   </section>
   <section class="wrap row">
     <p class="chapter">On the example</p>
-    <div class="tbl"><table><thead><tr><th>Try</th><th>Dinner then dessert</th><th>Home at</th><th>Result</th></tr></thead><tbody><tr><td>1</td><td>Best dinner, best dessert</td><td>10:20</td><td>Out: late</td></tr><tr><td>2</td><td>Best dinner, dessert across town</td><td>9:55</td><td>Out: big detour, no buffer</td></tr><tr><td>3</td><td>Kaveri thali, Malli sweets</td><td>9:40</td><td>Kept: best total that fits</td></tr></tbody></table></div><p class="muted">The deadline has a 15 minute traffic buffer: a plan that lands at 9:55 counts as late.</p>
+    <div class="tbl" tabindex="0"><table><thead><tr><th>Try</th><th>Dinner then dessert</th><th>Home at</th><th>Result</th></tr></thead><tbody><tr><td>1</td><td>Best dinner, best dessert</td><td>10:20</td><td>Out: late</td></tr><tr><td>2</td><td>Best dinner, dessert across town</td><td>9:55</td><td>Out: big detour, no buffer</td></tr><tr><td>3</td><td>Kaveri thali, Malli sweets</td><td>9:40</td><td>Kept: best total that fits</td></tr></tbody></table></div><p class="muted">The deadline has a 15 minute traffic buffer: a plan that lands at 9:55 counts as late.</p>
   </section>
   <section class="wrap row">
     <p class="chapter">What we learned</p>
@@ -37,6 +37,7 @@ import { url } from '../../../data/url';
     <details class="eng">
       <summary>The solver</summary>
       <div class="prose">
+        <p class="muted">Numbers below are proposed starting values, to be tuned.</p>
         <pre class="code">T = route_matrix([home] + dinners + desserts)      # one Google call, 13 × 13
 for d in dinners: for s in desserts:
     t_home = leave + T[home,d] + stay(d) + T[d,s] + stay(s) + T[s,home]
