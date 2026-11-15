@@ -1,0 +1,44 @@
+/* Design tokens: Kolam. Names are the engine contract; values come from DESIGN.md. */
+@font-face { font-family: 'Host'; src: url('../assets/fonts/host-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Host'; src: url('../assets/fonts/host-500-normal.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Host'; src: url('../assets/fonts/host-700-normal.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Host'; src: url('../assets/fonts/host-800-normal.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+@font-face { font-family: 'Martian'; src: url('../assets/fonts/martian-400-normal.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Martian'; src: url('../assets/fonts/martian-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+
+:root {
+  --c-bg: #F3F2EC;          /* lime-washed wall: reading ground */
+  --c-fg: #141513;          /* ink */
+  --c-muted: #5D5E56;       /* AA on ground */
+  --c-line: rgb(20 21 19 / 0.14);
+  --c-door: #161815;        /* doorstep stone */
+  --c-rice: #F2F0E8;        /* rice-flour line */
+  --c-door-muted: #B4B2A8;  /* AA on doorstep */
+  --c-door-line: rgb(242 240 232 / 0.16);
+  --c-turmeric: #E8A317;    /* fills and lines on dark; marks AI and chosen stops */
+  --c-turmeric-ink: #8A5A00;/* turmeric for text on light */
+  --c-kumkum: #B8322A;      /* fences, "no" */
+  --c-code: #2E7D6F;        /* code work, used sparingly */
+  --c-accent: var(--c-turmeric-ink);
+  --c-curtain: var(--c-door);
+  --c-card: #FAF9F5;
+
+  --f-display: 'Host', ui-sans-serif, system-ui, sans-serif;
+  --f-body: 'Host', ui-sans-serif, system-ui, sans-serif;
+  --f-mono: 'Martian', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --t-mega: clamp(3.4rem, 1rem + 9.5vw, 10.5rem);
+  --t-xl: clamp(2.4rem, 1.2rem + 4.4vw, 5.25rem);
+  --t-l: clamp(1.6rem, 1.15rem + 1.7vw, 2.6rem);
+  --t-m: clamp(1.2rem, 1.05rem + 0.5vw, 1.5rem);
+  --t-body: clamp(1.03rem, 0.98rem + 0.2vw, 1.14rem);
+  --t-s: 0.9rem;
+  --t-xs: 0.78rem;
+
+  --u: clamp(0.5rem, 0.35rem + 0.6vw, 1rem);
+  --gutter: clamp(1rem, 0.6rem + 1.6vw, 2.5rem);
+  --rail: 15.5rem;
+
+  --radius: 10px;
+  --z-content: 1; --z-header: 50; --z-curtain: 90;
+}

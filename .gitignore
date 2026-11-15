@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.shots/
+.look/
+*.log
+.DS_Store
+design-preview/*.png

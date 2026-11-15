@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://faiz-aaan.github.io/experience_app_prototype_1/sitemap-index.xml

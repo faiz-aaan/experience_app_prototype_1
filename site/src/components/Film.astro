@@ -1,0 +1,14 @@
+---
+interface Props { id: string; name: string; title: string; length: string; label: string }
+const { id, name, title, length, label } = Astro.props;
+---
+<figure class="film" data-film={name} id={id}>
+  <div class="head"><span>{title}</span><span>{length}</span></div>
+  <canvas role="img" aria-label={label}></canvas>
+  <figcaption class="cap" aria-live="polite"></figcaption>
+  <div class="bar">
+    <button class="play" type="button">Play</button>
+    <div class="track"><input type="range" min="0" value="0" aria-label={`Scrub: ${title}`} /><div class="ticks"></div></div>
+    <span class="time">0:00</span>
+  </div>
+</figure>

@@ -1,0 +1,80 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import { url } from '../../data/url';
+const stages = [
+  { n: 'Stage 1', name: 'Understand', who: 'AI', q: 'What did they actually ask for?', s: 'designed' as const,
+    text: 'The AI cuts the sentence into pieces and gives each a type: things to find, rules that must hold, tastes that would be nice. “Veg dinner for 4 under ₹500, something sweet on the way home, back by 10” becomes two things to find, four rules and one taste.' },
+  { n: 'Stage 2', name: 'Narrow', who: 'Code', q: 'Which places could possibly fit?', s: 'tested' as const,
+    text: 'Code searches only what is near enough, then applies every rule. Out of about 3,000 places in the area, roughly 40 are veg, open, seat four, fit the budget and leave time to get home.' },
+  { n: 'Stage 3', name: 'Rank', who: 'Code', q: 'Which would this person like most tonight?', s: 'tested' as const,
+    text: 'What survives is scored for this person: their long-term taste from the notebook, plus what tonight changes. The best 6 dinner places and 6 dessert stops go forward.' },
+  { n: 'Stage 4', name: 'Combine', who: 'Code', q: 'Which stops, in what order, home on time?', s: 'tested' as const,
+    text: 'Google gives travel times between those 12 places and home. A route solver tries the combinations and keeps the best pair that gets everyone home before 10, with a buffer for traffic.' },
+  { n: 'Stage 5', name: 'Check', who: 'Code', q: 'Is every fact true before we say it?', s: 'designed' as const,
+    text: 'Before anything is shown, code re-checks each rule against fresh data and prints every name, price and time itself. The AI only writes the reasons around them.' },
+];
+---
+<Base slug="how-it-works/" title="How it works: five stages" description="How The Cousin turns one sentence into a checked plan: understand, narrow, rank, combine, check.">
+  <header class="wrap phead">
+    <p class="chapter">03 · How it works</p>
+    <h1 class="h1" data-split="lines" data-intro>Five stages. Each one makes the list smaller.</h1>
+    <p class="lede muted" data-reveal="up" data-intro data-delay="0.3">The expensive steps only ever see a handful of places. That’s how thousands of places, different needs and live routes fit together in about a second.</p>
+  </header>
+
+  <section class="door kolam" data-kolam aria-label="The five stages, drawn as a kolam as you scroll">
+    <div class="kolam__chapters">
+      {stages.map((st) => (
+        <article class="kchap" data-chapter>
+          <p class="chapter">{st.n} · done by {st.who}</p>
+          <h2 class="h2">{st.name}</h2>
+          <p class="q">{st.q}</p>
+          <p class="muted">{st.text}</p>
+          <Status s={st.s} />
+        </article>
+      ))}
+    </div>
+    <div class="kolam__stage"><div class="kolam__canvas"><canvas role="img" aria-label="Dots for places narrowing from 3,000 to 40 to 12, then one line drawn from home to dinner to dessert and back"></canvas></div></div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">In one table</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Stage</th><th>Question</th><th>Kind of algorithm</th><th>Done by</th><th>List size</th></tr></thead>
+        <tbody>
+          <tr><td>Understand</td><td>What did they ask for?</td><td>Language model</td><td>AI</td><td class="num">1 sentence</td></tr>
+          <tr><td>Narrow</td><td>What could fit?</td><td>Search and hard filters (fences)</td><td>Code</td><td class="num">3,000 → 40</td></tr>
+          <tr><td>Rank</td><td>What would they like?</td><td>Scoring (magnets); trained models later</td><td>Code</td><td class="num">40 → 12</td></tr>
+          <tr><td>Combine</td><td>Which stops, what order?</td><td>Route solver</td><td>Code</td><td class="num">12 → 1 plan</td></tr>
+          <tr><td>Check</td><td>Is it all true?</td><td>Rule checks; facts printed by code</td><td>Code</td><td class="num">1 → shown</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">Where each algorithm sits</p>
+    <div class="prose">
+      <p>The algorithms on the next pages each live inside one stage. <a href={url('algorithms/fences-and-magnets/')}>Fences and magnets</a> are stages 2 and 3. The mix, variety, rest period and memory shape stage 3. The route puzzle and the evening arc are stage 4. Saying no and asking a question happen right after stage 1. Facts by code is stage 5.</p>
+      <p class="muted">One proposal is still open: letting the AI choose the final three from the safe shortlist, so it understands words like “romantic” or “local” that fixed tags miss. It would sit at the end of stage 3. It’s listed under open decisions.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kolam { display: grid; grid-template-columns: 1fr; position: relative; }
+  @media (min-width: 900px) { .kolam { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+  .kolam__chapters { padding: 0 var(--gutter); order: 2; }
+  @media (min-width: 900px) { .kolam__chapters { order: 1; padding-block: 18vh 30vh; } }
+  .kchap { min-height: 72vh; display: grid; align-content: center; gap: 0.9rem; max-width: 30rem; opacity: 0.35; transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .kchap.is-on { opacity: 1; }
+  .kchap .q { font-size: var(--t-m); font-weight: 600; }
+  .kolam__stage { order: 1; position: sticky; top: 0; height: 52vh; z-index: 2; background: var(--c-door); border-bottom: 1px solid var(--c-door-line); }
+  @media (min-width: 900px) { .kolam__stage { order: 2; height: 100vh; border-bottom: 0; } }
+  @media (max-width: 1099px) { .kolam__stage { top: 58px; height: calc(52vh - 58px); } }
+  .kolam__canvas { position: absolute; inset: 0; }
+  .kolam__canvas canvas { width: 100%; height: 100%; }
+  @media (max-width: 899px) { .kchap { min-height: 60vh; } }
+  @media (prefers-reduced-motion: reduce) { .kchap { opacity: 1; } }
+</style>

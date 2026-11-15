@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../data/url';
+---
+<Base slug="404" title="Not on the map">
+  <section class="door lost">
+    <div class="wrap">
+      <svg viewBox="0 0 200 120" aria-hidden="true"><g fill="#F2F0E8" opacity=".5">{[0,1,2,3,4].map((i)=>[0,1,2].map((j)=><circle cx={20+i*40} cy={20+j*40} r="3"/>))}</g><path d="M20 100 C 50 60, 70 60, 100 60" fill="none" stroke="#E8A317" stroke-width="2.4" stroke-linecap="round"/><circle cx="100" cy="60" r="6" fill="none" stroke="#B8322A" stroke-width="2"/></svg>
+      <h1 class="h1">This line doesn’t reach a dot.</h1>
+      <p class="lede muted">The page you asked for isn’t here. A cousin would offer the nearest real thing instead.</p>
+      <a class="inline" href={url('')}>Back to the product in one minute</a>
+    </div>
+  </section>
+</Base>
+<style>
+  .lost { min-height: 70vh; display: grid; align-items: center; padding-block: 4rem; }
+  .lost .wrap { display: grid; gap: 1.2rem; }
+  .lost svg { width: 12rem; }
+</style>

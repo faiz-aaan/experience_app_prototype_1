@@ -1,0 +1,30 @@
+---
+import { sections } from '../data/site';
+import { url } from '../data/url';
+interface Props { current: string }
+const { current } = Astro.props;
+const groupStarts = new Set<number>();
+sections.forEach((s, i) => { if (s.group && sections[i - 1]?.group !== s.group) groupStarts.add(i); });
+---
+<ol class="index">
+  {sections.map((s, i) => (
+    <>
+      {groupStarts.has(i) && (
+        <li class="group" aria-hidden="true">{s.n} · {s.group}</li>
+      )}
+      <li class={s.group ? 'sub' : ''}>
+        {s.built ? (
+          <a href={url(s.slug)} aria-current={current === s.slug ? 'page' : undefined}>
+            {!s.group && <span class="num">{s.n}</span>}
+            <span class="roll"><span>{s.short}</span><span aria-hidden="true">{s.short}</span></span>
+          </a>
+        ) : (
+          <span class="soon">
+            {!s.group && <span class="num">{s.n}</span>}
+            <span>{s.short}<em>next</em></span>
+          </span>
+        )}
+      </li>
+    </>
+  ))}
+</ol>

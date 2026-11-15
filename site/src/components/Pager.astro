@@ -1,0 +1,18 @@
+---
+import { sections, site } from '../data/site';
+import { url } from '../data/url';
+interface Props { current: string }
+const i = sections.findIndex((s) => s.slug === Astro.props.current);
+const prev = sections.slice(0, i).reverse().find((s) => s.built);
+const next = sections.slice(i + 1).find((s) => s.built);
+const upcoming = sections.slice(i + 1).find((s) => !s.built);
+---
+<nav class="pager" aria-label="Previous and next section">
+  {prev ? <a href={url(prev.slug)}><small>Previous</small><b>{prev.title}</b></a> : <span></span>}
+  {next ? <a href={url(next.slug)}><small>Next</small><b>{next.title}</b></a>
+        : <span style="text-align:right"><small>Coming next</small><b class="muted">{upcoming?.title}</b></span>}
+</nav>
+<footer class="foot">
+  <span>The Cousin · product requirements · updated {site.updated}</span>
+  <span>Places, prices and people in examples are invented. Simulation results use synthetic people.</span>
+</footer>

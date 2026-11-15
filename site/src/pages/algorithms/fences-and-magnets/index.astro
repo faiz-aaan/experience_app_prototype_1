@@ -1,0 +1,109 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Film from '../../../components/Film.astro';
+import Status from '../../../components/Status.astro';
+import { url } from '../../../data/url';
+import agg from '../../../data/sim/stress_agg.json';
+const p1 = (v: number) => `${(v * 100).toFixed(1)}%`;
+---
+<Base slug="algorithms/fences-and-magnets/" title="Fences and magnets" description="The first two algorithms: fences remove what is impossible, magnets rank what is left for this person tonight.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · Stages 2 and 3</p>
+    <h1 class="h1" data-split="lines" data-intro>Fences remove. Magnets rank. They never mix.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">A good cousin would never suggest a non-veg place to a vegetarian friend, however good it is. Among the places that are allowed, they pick what that friend would enjoy tonight.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="pair">
+      <div class="term fence">
+        <h2 class="h3">A fence is a rule that must be true</h2>
+        <p>Veg. Under ₹500 each. Seats four. Open when you arrive. Close enough to be home by 10. It is yes or no. Fail one and the place is out.</p>
+      </div>
+      <div class="term magnet">
+        <h2 class="h3">A magnet is something they’d like</h2>
+        <p>South Indian food. A calm room. Somewhere livelier tonight because four friends are coming. Magnets pull good places up the list. They never rule anything out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-fences" name="fences" title="Film · Fences, then magnets" length="22 s" label="Animated film: about 150 dinner places shown as dots; five fences knock most of them out; the survivors are ranked by magnets and the top six move on" />
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">On the example</p>
+    <div class="stack">
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Fence</th><th>Where the fact comes from</th><th>If the fact is unknown</th></tr></thead>
+          <tbody>
+            <tr><td>Vegetarian</td><td>Place-confirmed menu facts</td><td>Treated as no</td></tr>
+            <tr><td>Under ₹500 each</td><td>Our own cost bands, with a source and a date</td><td>Shown as “about”, asked about if it decides the pick</td></tr>
+            <tr><td>Seats 4</td><td>Our listing</td><td>Shown, with “worth calling ahead”</td></tr>
+            <tr><td>Open when you arrive</td><td>Google, fetched live</td><td>Treated as no</td></tr>
+            <tr><td>Home by 10</td><td>Google travel times plus a traffic buffer</td><td>Never unknown</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Magnet</th><th>Where it comes from</th><th>Lasts</th></tr></thead>
+          <tbody>
+            <tr><td>South Indian, calm</td><td>The notebook: what they loved before and said in their taste seed</td><td>Always, fading slowly</td></tr>
+            <tr><td>Livelier tonight</td><td>Today: four friends are coming</td><td>This conversation only</td></tr>
+            <tr><td>Not too far</td><td>Travel time, as a small penalty</td><td>Always</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">When today and always disagree, today wins, for this conversation only.</p>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">What we learned</p>
+    <div class="learned">
+      <div class="prose">
+        <p><b>The logic held.</b> In a stress test of 68 hard requests, run 17,200 times, ranking never broke a stated rule, because the rules run before any score.</p>
+        <p><b>The data didn’t.</b> When the cousin trusted listings as they were, {p1(agg.listed.hard_viol)} of answers to diet, allergy or access requests broke the need, because the listing was wrong. Rare needs suffer most: about 1 place in 20 is truly Jain, so a small error rate across the other 19 turns many “Jain” listings false.</p>
+        <p><b>The fix is data, not maths.</b> Counting only “yes” claims the place itself confirmed cut this to {p1(agg.confirmed.hard_viol)}, without serving fewer people. The reply still says “confirmed by the place; worth mentioning when you order”.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>{p1(agg.listed.hard_viol)}</b><span>diet or allergy needs broken, trusting listings</span></div>
+        <div class="fact"><b>{p1(agg.confirmed.hard_viol)}</b><span>with place-confirmed claims</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The formulas and what replaces them later</summary>
+      <div class="prose">
+        <pre class="code">allowed = [x for x in nearby if all(fence(x) for fence in fences)]
+
+score(x) = taste · tags(x)          # notebook, overridden by today
+         + today · tags(x)
+         − 0.15 × travel_minutes / 45
+         − rest_period(x)           # places visited recently</pre>
+        <p>Fences are a hard filter; magnets are a weighted linear score over a fixed tag vocabulary. The score function is the one piece that trained models replace once there is enough data: first a small statistical model with a “people like you” signal, then gradient-boosted trees if they win a live test. Fences are never learned.</p>
+        <p>Known weakness: tags only know what they name. “Romantic” or “local” have no tag, which is why one open proposal lets the AI choose the final three from the fenced shortlist.</p>
+      </div>
+    </details>
+  </section>
+</Base>
+
+<style>
+  .headrow { display: grid; gap: 1rem; justify-items: start; }
+  .pair { display: grid; gap: var(--gutter); }
+  @media (min-width: 760px) { .pair { grid-template-columns: 1fr 1fr; } }
+  .term { padding-top: 1rem; border-top: 3px solid; display: grid; gap: 0.6rem; }
+  .term.fence { border-color: var(--c-kumkum); }
+  .term.magnet { border-color: var(--c-code); }
+  .stack { display: grid; gap: 1rem; }
+  .learned { display: grid; gap: calc(var(--u) * 3); }
+</style>

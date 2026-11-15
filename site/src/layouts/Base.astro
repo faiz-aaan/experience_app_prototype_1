@@ -1,0 +1,94 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { site } from '../data/site';
+import Index from '../components/Index.astro';
+import Brand from '../components/Brand.astro';
+import Pager from '../components/Pager.astro';
+import '../styles/tokens.css';
+import '../styles/engine.css';
+import '../styles/site.css';
+import host400 from '../assets/fonts/host-400-normal.woff2?url';
+import host800 from '../assets/fonts/host-800-normal.woff2?url';
+
+interface Props { title?: string; description?: string; slug: string }
+const { title, description = site.description, slug } = Astro.props;
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.role}`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url).href;
+const ogImage = new URL(`${import.meta.env.BASE_URL.replace(/\/$/, '')}/og.png`, Astro.site ?? site.url).href;
+const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: fullTitle, description, url: canonical };
+---
+<!doctype html>
+<html lang="en" transition:animate="none">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#161815" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href={host400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={host800} as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion');
+    </script>
+    <ClientRouter fallback="swap" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="curtain" transition:persist="curtain" aria-hidden="true"><div class="curtain__panel"></div><div class="curtain__line"></div></div>
+    <div class="shell">
+      <aside class="rail" aria-label="Sections">
+        <Brand />
+        <nav aria-label="Sections"><Index current={slug} /></nav>
+        <p class="meta">Product requirements<br />Updated {site.updated}</p>
+      </aside>
+      <div class="page">
+        <header class="topbar">
+          <Brand />
+          <button class="menu-btn" type="button" aria-expanded="false" aria-controls="overlay" data-menu-open>Menu</button>
+        </header>
+        <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Sections">
+          <div class="top"><Brand /><button class="menu-btn" type="button" data-menu-close>Close</button></div>
+          <nav aria-label="Sections (menu)"><Index current={slug} /></nav>
+        </div>
+        <main id="main" tabindex="-1">
+          <slot />
+        </main>
+        <Pager current={slug} />
+      </div>
+    </div>
+    <script>
+      import { start } from '../engine/astro';
+      import { onPage } from '../engine';
+      import '../films/register';
+      start();
+      onPage(() => {
+        const open = document.querySelector<HTMLButtonElement>('[data-menu-open]');
+        const close = document.querySelector<HTMLButtonElement>('[data-menu-close]');
+        const ov = document.getElementById('overlay');
+        if (!open || !close || !ov) return;
+        const set = (on: boolean) => {
+          ov.classList.toggle('is-open', on);
+          open.setAttribute('aria-expanded', String(on));
+          document.documentElement.style.overflow = on ? 'hidden' : '';
+          (on ? close : open).focus();
+        };
+        const onOpen = () => set(true), onClose = () => set(false);
+        const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape' && ov.classList.contains('is-open')) set(false); };
+        open.addEventListener('click', onOpen); close.addEventListener('click', onClose);
+        document.addEventListener('keydown', onKey);
+        ov.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { ov.classList.remove('is-open'); document.documentElement.style.overflow = ''; }));
+        return () => { document.removeEventListener('keydown', onKey); document.documentElement.style.overflow = ''; };
+      });
+    </script>
+  </body>
+</html>

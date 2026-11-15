@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base slug="goals/" title="Goals, non-goals and success" description="What The Cousin must achieve first, what it deliberately won’t do yet, and how we’ll know it works.">
+  <header class="wrap phead">
+    <p class="chapter">02 · Goals, non-goals and success</p>
+    <h1 class="h1" data-split="lines" data-intro>Prove that friends actually go out on its ideas.</h1>
+    <p class="lede muted" data-reveal="up" data-intro data-delay="0.3">One city, one evening at a time, for the founder and 3 to 5 friends first. Everything else waits until that works.</p>
+  </header>
+
+  <section class="wrap row">
+    <p class="chapter">First users</p>
+    <div class="prose">
+      <p>The founder plus 3 to 5 friends in Chennai, aged roughly 18 to 30. The first situation to get right is the vaguest one: <b>“I’m bored, surprise me.”</b> If the app can turn that into an evening people enjoy, the specific requests are easier.</p>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">Success in month one</p>
+    <div class="signals">
+      <div><b>They go</b><p>Ideas turn into real outings, not just saved lists.</p></div>
+      <div><b>“I’d never have found that”</b><p>Some outings are new to the person, and they loved them.</p></div>
+      <div><b>Fewer back-and-forths</b><p>The first reply needs less fixing each week.</p></div>
+      <div><b>They go back</b><p>For clubs and communities, the second visit matters more than the first.</p></div>
+      <p class="muted small">We measure outings, not screen time. Minutes in the app are not a goal.</p>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">Goals</p>
+    <ol class="plain">
+      <li><b>Understand any request</b> about going out, from “I’m bored” to a two-stop plan with a deadline.</li>
+      <li><b>Never break a stated limit.</b> Budget, diet, group size and deadlines always hold.</li>
+      <li><b>Never invent a fact.</b> Every name, price and time shown comes from data, printed by code.</li>
+      <li><b>Follow changes of mind</b> in one step: “only ₹500”, “we’re 10 now”, “scrap it”.</li>
+      <li><b>Say no clearly</b> to unsafe or out-of-scope asks, and offer the nearest safe thing.</li>
+      <li><b>Get better with use:</b> remember what worked, rest places just visited, notice when taste changes.</li>
+    </ol>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">Not yet</p>
+    <div class="not">
+      <p class="muted">Each of these was discussed and deliberately parked. The design leaves room for them.</p>
+      <ul class="plain">
+        <li><b>Intercity rides and multi-day trips.</b> A Chennai to Bangalore ride or a 5-day visitor plan gets “not yet, here’s a single evening”.</li>
+        <li><b>Bookings and payments.</b> Later, and anything that costs money always needs the user’s yes.</li>
+        <li><b>Voice.</b> The end goal is speak, hear a reply, see the plan on a map. The core stays the same; voice wraps it.</li>
+        <li><b>Other cities and languages.</b> English first, Chennai first.</li>
+        <li><b>Paid placement.</b> If it ever happens, it is labelled and kept out of the normal ranking.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="door">
+    <div class="wrap row airy">
+      <p class="chapter">Principles</p>
+      <ol class="principles">
+        <li><span>The AI is the voice, not the brain.</span> It listens and explains. Code chooses, checks and remembers.</li>
+        <li><span>Limits before taste.</span> Hard rules remove options first; only then does scoring rank what’s left.</li>
+        <li><span>At most one question per reply.</span> Guess sensibly, say the guess out loud, ask only when a wrong guess is costly.</li>
+        <li><span>A habit, not an addiction.</span> The reward happens out in the city, once or twice a week.</li>
+        <li><span>Every model earns its place.</span> A trained model replaces a rule only after beating it on real people.</li>
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .small { font-size: 0.92rem; }
+  .signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.4rem var(--gutter); }
+  .signals > div { border-top: 2px solid var(--c-fg); padding-top: 0.8rem; }
+  .signals b { font-size: var(--t-m); font-weight: 700; letter-spacing: -0.015em; }
+  .signals p { margin-top: 0.3rem; }
+  .signals > p { grid-column: 1 / -1; }
+  .plain { padding-left: 1.2rem; display: grid; gap: 0.75rem; max-width: 62ch; }
+  .not { display: grid; gap: 1rem; }
+  .principles { list-style: none; padding: 0; display: grid; gap: 1.2rem; counter-reset: p; max-width: 58rem; }
+  .principles li { counter-increment: p; display: grid; grid-template-columns: 3rem 1fr; gap: 0.2rem 1rem; font-size: var(--t-m); line-height: 1.4; color: var(--c-door-muted); }
+  .principles li::before { content: counter(p, decimal-leading-zero); font: 600 0.8rem/2.2 var(--f-mono); color: var(--c-turmeric); grid-row: span 2; }
+  .principles span { color: var(--c-rice); font-weight: 700; }
+</style>
