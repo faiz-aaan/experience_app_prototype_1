@@ -69,5 +69,11 @@ export function initReveals(root: ParentNode = document) {
       scrollTrigger: { trigger: el.parentElement || el, start: 'top bottom', end: 'bottom top', scrub: true },
     });
   });
+  root.querySelectorAll<HTMLElement>('[data-bars]').forEach((el) => {
+    gsap.from(el.querySelectorAll('[data-bar]'), {
+      scaleX: 0, duration: 1.4, ease: ease.out, stagger: 0.06,
+      scrollTrigger: { trigger: el, start: 'top 80%', once: true },
+    });
+  });
   return intro;
 }

@@ -10,7 +10,7 @@ import agg from '../../data/sim/stress_agg.json';
 const pc = (v: number) => `${Math.round(v * 100)}%`;
 const pc1 = (v: number) => `${(v * 100).toFixed(1)}%`;
 const arms: [string, string][] = [['popular', 'Popular list (no cousin)'], ['full', 'The cousin, rules only'], ['full+lr', '+ logistic regression'], ['full+gbdt', '+ gradient-boosted trees'], ['full+mlp', '+ small neural net'], ['oracle', 'Perfect knowledge (ceiling)']];
-const worlds = [{ name: 'Clean world, 5,000 people', d: clean as any }, { name: 'Messy world, 5,000 people: hidden tastes no tag describes', d: messy as any }];
+const worlds = [{ name: 'Clean world, 5,000 people', short: 'Clean world', d: clean as any }, { name: 'Messy world, 5,000 people: hidden tastes no tag describes', short: 'Messy world: hidden tastes', d: messy as any }];
 const auc = [['rules', 'Rules'], ['lr', 'Logistic regression'], ['gbdt', 'Gradient-boosted trees'], ['mlp', 'Small neural net']];
 const dr: [string, string][] = [['full', 'Nothing'], ['full+drift', 'Surprise meter alone'], ['full+mention', 'Listening'], ['full+refresh', 'Monthly catch-up'], ['full+refresh+mention', 'Listening + catch-up']];
 ---
@@ -29,6 +29,26 @@ const dr: [string, string][] = [['full', 'Nothing'], ['full+drift', 'Surprise me
     <div class="prose">
       <p><b>First pick accepted</b>: the first suggestion was the one they took. <b>Loved it</b>: they’d rate the evening top marks. <b>New find</b>: a place new to them that they liked. <b>Repeat</b>: a recently seen place was suggested again (lower is better).</p>
       <p class="muted">Simulated people are not real people. These numbers compare designs with each other; they don’t predict launch numbers. The 71% on the home page comes from the earlier 50-person test, a different set of situations.</p>
+    </div>
+  </section>
+
+  <section class="door">
+    <div class="wrap row airy">
+      <p class="chapter">At a glance: first pick accepted</p>
+      <div class="bars" data-bars>
+        {worlds.map((w) => (
+          <div class="bars__world">
+            <p class="bars__title">{w.short}</p>
+            {arms.map(([k, n]) => { const v = w.d.res[k].all.first; return (
+              <div class={`bar bar--${k.replace('+', '-')}`}>
+                <span class="bar__name">{n}</span>
+                <span class="bar__track"><i data-bar style={`width:${(v * 100).toFixed(1)}%`}></i></span>
+                <b>{pc(v)}</b>
+              </div>
+            ); })}
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -83,3 +103,19 @@ const dr: [string, string][] = [['full', 'Nothing'], ['full+drift', 'Surprise me
     </div>
   </section>
 </Base>
+
+<style>
+  .bars { display: grid; gap: calc(var(--u) * 3); }
+  .bars__world { display: grid; gap: 0.55rem; }
+  .bars__title { font: 600 var(--t-xs)/1.3 var(--f-mono); letter-spacing: 0.05em; color: var(--c-turmeric); margin-bottom: 0.3rem; }
+  .bar { display: grid; grid-template-columns: 15rem 1fr 3.5rem; align-items: center; gap: 1rem; }
+  .bar__name { font-size: 0.95rem; color: var(--c-door-muted); }
+  .bar__track { height: 14px; background: rgb(255 255 255 / 0.06); border-radius: 2px; overflow: hidden; }
+  .bar__track i { display: block; height: 100%; background: var(--c-rice); opacity: 0.55; transform-origin: left center; }
+  .bar b { font: 600 1rem/1 var(--f-mono); text-align: right; font-variant-numeric: tabular-nums; }
+  .bar--popular .bar__track i { background: var(--c-kumkum); opacity: 0.85; }
+  .bar--full .bar__name, .bar--full b { color: var(--c-turmeric); }
+  .bar--full .bar__track i { background: var(--c-turmeric); opacity: 1; }
+  .bar--full-lr .bar__track i { opacity: 0.9; }
+  .bar--oracle .bar__track i { background: transparent; outline: 1.5px dashed var(--c-door-muted); outline-offset: -1.5px; opacity: 1; }
+</style>

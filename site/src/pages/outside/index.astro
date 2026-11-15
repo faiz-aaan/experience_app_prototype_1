@@ -53,23 +53,23 @@ const services = [
     <p class="chapter">Five questions, answered</p>
     <div class="stack">
       <div class="qa">
-        <h3>How does it ask counter-questions?</h3>
+        <h2>How does it ask counter-questions?</h2>
         <p>It doesn’t ask by default. After the AI cuts the sentence into pieces, code checks three gates: can a missing piece be filled safely from the notebook or today; would the answer change the picks (budget for 10 people does; preferred table side doesn’t); and is a wrong guess expensive. Only if it can’t be filled, would change the picks, and is costly to get wrong does it ask, and then only one short question per reply, with tap-able answers. Otherwise it plans with a stated guess: “Assuming medium spice.” <a href={url('algorithms/asking/')}>More on asking</a>.</p>
       </div>
       <div class="qa">
-        <h3>How does it know what to recommend?</h3>
+        <h2>How does it know what to recommend?</h2>
         <p>Three sources, mixed by code. The notebook: what this person loved, liked or skipped before, and their taste seed from day one. Today: what they said in this conversation, which wins for tonight. And the place’s own facts. Magnets score each allowed place; then a mix keeps a safe pick, a stretch and sometimes a wild card, so the list isn’t three copies of the same idea. <a href={url('algorithms/fences-and-magnets/')}>Fences and magnets</a>, <a href={url('algorithms/mix-and-variety/')}>mix and variety</a>.</p>
       </div>
       <div class="qa">
-        <h3>How does it narrow down?</h3>
+        <h2>How does it narrow down?</h2>
         <p>Area first, then kind, then fences. Google Places is asked only for the right kind of place within reach of home and the deadline. It returns up to 20 places per call, so we run a few searches by kind and area and merge them with our own listings: a few hundred candidates. Then every fence runs in code: veg, budget, seats, open on arrival, home by 10. About 40 survive. Ranking keeps the best 6 dinners and 6 desserts. Only those 12 go on to routing.</p>
       </div>
       <div class="qa">
-        <h3>How does the route order work?</h3>
+        <h2>How does the route order work?</h2>
         <p>One call to the Routes matrix gives travel times between home and all 12 places, with traffic: a 13 by 13 table. The solver then tries every dinner with every dessert (36 pairs), in the order the evening needs: dinner first, dessert on the way home. It drops any pair that misses 10 pm with a 15 minute buffer, and prefers the arc that feels right: a short first hop, the main thing in the middle, a gentle end. <a href={url('algorithms/route-and-arc/')}>Route and arc</a>.</p>
       </div>
       <div class="qa">
-        <h3>How is it placed on the map?</h3>
+        <h2>How is it placed on the map?</h2>
         <p>For the chosen plan only, Routes returns the road path as a line. The app draws it on a Google map with numbered pins and a timeline underneath: leave 7:15, dinner 7:30, dessert 9:05, home 9:40. Before leaving, hours and traffic are checked again, and the plan updates if something changed.</p>
       </div>
     </div>

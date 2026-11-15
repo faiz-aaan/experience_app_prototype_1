@@ -16,7 +16,7 @@ sections.forEach((s, i) => { if (s.group && sections[i - 1]?.group !== s.group) 
         {s.built ? (
           <a href={url(s.slug)} aria-current={current === s.slug ? 'page' : undefined}>
             {!s.group && <span class="num">{s.n}</span>}
-            <span class="roll"><span>{s.short}</span><span aria-hidden="true">{s.short}</span></span>
+            <span class="roll" data-t={s.short}><span>{s.short}</span></span>
           </a>
         ) : (
           <span class="soon">

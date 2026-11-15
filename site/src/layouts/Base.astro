@@ -63,7 +63,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: ful
         <main id="main" tabindex="-1">
           <slot />
         </main>
-        <Pager current={slug} />
+        {slug !== "404" && <Pager current={slug} />}
       </div>
     </div>
     <script>
