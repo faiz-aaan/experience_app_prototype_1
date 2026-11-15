@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cousin: vibrant directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;700;800&family=Martian+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{background:#efeee9;color:#111;font:16px/1.5 "Host Grotesk",system-ui,sans-serif;padding:32px 20px 64px}
+.intro{max-width:76ch;margin:0 auto 30px}.intro h1{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin-bottom:8px}.intro p{color:#4b4b47}
+.intro ul{margin:10px 0 0 18px;color:#4b4b47;font-size:15px}
+.dir{max-width:1200px;margin:0 auto 52px}
+.label{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;margin-bottom:12px}.label b{font-size:22px}.label span{color:#4b4b47}
+.frame{border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px;font-size:14.5px}
+.notes div{background:#fafaf7;border-radius:10px;padding:12px 14px}.notes b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#55554f;margin-bottom:4px}
+.sw{display:flex;gap:6px;margin-top:6px}.sw i{width:28px;height:28px;border-radius:8px;display:block;border:1px solid rgba(0,0,0,.12)}
+.mono{font-family:"Martian Mono",monospace}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;font:700 13px/1 "Martian Mono",monospace}
+.nav .pill{padding:9px 14px;border-radius:99px}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;padding:24px 28px 44px;align-items:center}
+h2.big{font-size:clamp(44px,6.6vw,96px);line-height:.88;letter-spacing:-.05em;font-weight:800}
+.lede{max-width:40ch;margin-top:18px;font-size:18px}
+.btns{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}.btn{font-weight:700;padding:14px 20px;border-radius:99px}
+svg.k{width:100%;max-width:420px;justify-self:center}
+svg.k path{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 5s ease-in-out infinite}
+@keyframes draw{0%{stroke-dashoffset:1200}55%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:-1200}}
+.stages{display:grid;grid-template-columns:repeat(5,1fr)}
+.stage{padding:22px 18px 26px;min-height:190px;display:grid;align-content:space-between;gap:12px}
+.stage .n{font:700 12px/1 "Martian Mono",monospace;opacity:.8}.stage b{font-size:24px;letter-spacing:-.03em;font-weight:800;line-height:1}.stage p{font-size:14px;line-height:1.35}
+.read{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:32px 28px}
+.read h3{font-size:32px;line-height:1;letter-spacing:-.035em;font-weight:800}.read p{max-width:62ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.chip{font:700 12px/1 "Martian Mono",monospace;padding:8px 12px;border-radius:99px}
+@media (max-width:820px){.hero,.read{grid-template-columns:1fr}.stages{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}svg.k path{stroke-dashoffset:0}}
+
+/* V1 Pongal kolam: many powders, white ground */
+.v1{background:#FFFBF2;color:#16130F}
+.v1 .nav .pill{background:#16130F;color:#FFFBF2}
+.v1 .hero{background:#FFC21A}
+.v1 h2 em{font-style:normal;color:#E8344E}
+.v1 .btn.p{background:#16130F;color:#FFC21A}.v1 .btn.s{background:#FFFBF2;color:#16130F}
+.v1 svg.k path{stroke:#16130F}
+.v1 .stage:nth-child(1){background:#E8344E;color:#fff}.v1 .stage:nth-child(2){background:#3D3BFF;color:#fff}.v1 .stage:nth-child(3){background:#12A150;color:#fff}.v1 .stage:nth-child(4){background:#FF7AC6;color:#16130F}.v1 .stage:nth-child(5){background:#16130F;color:#FFC21A}
+.v1 .chip.f{background:#E8344E;color:#fff}.v1 .chip.m{background:#12A150;color:#fff}.v1 .chip.x{background:#3D3BFF;color:#fff}
+
+/* V2 Chapter fields: each part owns a colour; one at a time */
+.v2{background:#2347FF;color:#fff}
+.v2 .nav .pill{background:#D8FF3C;color:#0D1033}
+.v2 h2 em{font-style:normal;color:#D8FF3C}
+.v2 .btn.p{background:#D8FF3C;color:#0D1033}.v2 .btn.s{border:2px solid #fff;color:#fff}
+.v2 svg.k path{stroke:#D8FF3C}
+.v2 .stages{background:#0D1033}
+.v2 .stage{border-right:1px solid rgba(255,255,255,.14)}
+.v2 .stage:nth-child(1) .n{color:#FF8A3D}.v2 .stage:nth-child(2) .n{color:#FF5FA2}.v2 .stage:nth-child(3) .n{color:#D8FF3C}.v2 .stage:nth-child(4) .n{color:#6AF2C8}.v2 .stage:nth-child(5) .n{color:#B9A6FF}
+.v2 .read{background:#FFF4E8;color:#0D1033}
+.v2 .chip.f{background:#FF5FA2;color:#0D1033}.v2 .chip.m{background:#6AF2C8;color:#0D1033}.v2 .chip.x{background:#2347FF;color:#fff}
+
+/* V3 Marina sunset: warm field gradient bands, cleaner */
+.v3{background:#FF5A36;color:#1B0A2A}
+.v3 .nav .pill{background:#1B0A2A;color:#FFE16B}
+.v3 h2 em{font-style:normal;color:#FFE16B}
+.v3 .hero{color:#1B0A2A}
+.v3 .btn.p{background:#1B0A2A;color:#FFE16B}.v3 .btn.s{background:#FFE16B;color:#1B0A2A}
+.v3 svg.k path{stroke:#1B0A2A}
+.v3 .stage:nth-child(1){background:#FF7A45}.v3 .stage:nth-child(2){background:#FF9A55}.v3 .stage:nth-child(3){background:#FFB86B}.v3 .stage:nth-child(4){background:#FFD27A}.v3 .stage:nth-child(5){background:#FFE9A8}
+.v3 .read{background:#1B0A2A;color:#FFF3E6}
+.v3 .chip.f{background:#FF5A36;color:#1B0A2A}.v3 .chip.m{background:#FFE16B;color:#1B0A2A}.v3 .chip.x{background:#7B5CFF;color:#fff}
+</style>
+</head>
+<body>
+<div class="intro">
+  <h1>Vibrant directions for the PRD site</h1>
+  <p>Same kolam idea (places are dots, a plan is the line through them), now in colour. What changes from the first version:</p>
+  <ul>
+    <li><b>Colour does the work.</b> Big colour fields per section, not a grey document with one accent.</li>
+    <li><b>Less like a document.</b> No hairline rows everywhere. Stages become coloured tiles you can scan; reading text sits on calm panels between them.</li>
+    <li><b>One idea per screen.</b> Every section has one headline, one picture or film, and a few lines of text.</li>
+  </ul>
+</div>
+
+<section class="dir"><div class="label"><b>1. Pongal kolam</b><span>Recommended. The coloured powders of a Pongal kolam: turmeric, kumkum, indigo, leaf green, rose.</span></div>
+<div class="frame v1">
+  <div class="nav"><span>The Cousin</span><span class="pill">Menu</span></div>
+  <div class="hero">
+    <div><h2 class="big">“I’m bored.”<br>Three ideas, <em>checked.</em></h2><p class="lede">An app that knows you and knows Chennai. One sentence in; a checked plan out.</p>
+    <div class="btns"><span class="btn p">See how it works</span><span class="btn s">Goals and scope</span></div></div>
+    <svg class="k" viewBox="0 0 320 320" aria-hidden="true"><g class="d"></g><path class="kl"/></svg>
+  </div>
+  <div class="stages">
+    <div class="stage"><span class="n">01</span><b>Understand</b><p>Your sentence becomes typed pieces.</p></div>
+    <div class="stage"><span class="n">02</span><b>Narrow</b><p>3,000 places to 40 that fit.</p></div>
+    <div class="stage"><span class="n">03</span><b>Rank</b><p>Scored for you, tonight.</p></div>
+    <div class="stage"><span class="n">04</span><b>Combine</b><p>Stops, order, home by 10.</p></div>
+    <div class="stage"><span class="n">05</span><b>Check</b><p>Every fact proved.</p></div>
+  </div>
+  <div class="read"><h3>Fences and magnets</h3><div><p>A fence must be true: veg, under ₹500, seats four. Fail one and the place is out. A magnet is something you’d like; it pulls good places up the list.</p><div class="chips"><span class="chip f">FENCE · veg</span><span class="chip f">FENCE · ₹500</span><span class="chip m">MAGNET · calm</span><span class="chip x">FIND · dessert on the way</span></div></div></div>
+</div>
+<div class="notes"><div><b>Feel</b>Festive, warm, unmistakably Chennai. Bright but grounded on a warm white.</div><div><b>Colour</b><div class="sw"><i style="background:#FFC21A"></i><i style="background:#E8344E"></i><i style="background:#3D3BFF"></i><i style="background:#12A150"></i><i style="background:#FF7AC6"></i><i style="background:#16130F"></i></div></div><div><b>Rule</b>Each of the 5 stages owns one powder colour everywhere on the site: films, chips, tiles.</div><div><b>Risk</b>Many colours: kept in check by using one colour per screen, plus black and white.</div></div>
+</section>
+
+<section class="dir"><div class="label"><b>2. Chapter fields</b><span>Bold and modern. Electric blue with an acid-lime highlight; each chapter gets its own neon.</span></div>
+<div class="frame v2">
+  <div class="nav"><span>The Cousin</span><span class="pill">Menu</span></div>
+  <div class="hero">
+    <div><h2 class="big">“I’m bored.”<br>Three ideas, <em>checked.</em></h2><p class="lede">An app that knows you and knows Chennai. One sentence in; a checked plan out.</p>
+    <div class="btns"><span class="btn p">See how it works</span><span class="btn s">Goals and scope</span></div></div>
+    <svg class="k" viewBox="0 0 320 320" aria-hidden="true"><g class="d"></g><path class="kl"/></svg>
+  </div>
+  <div class="stages">
+    <div class="stage"><span class="n">01</span><b>Understand</b><p>Your sentence becomes typed pieces.</p></div>
+    <div class="stage"><span class="n">02</span><b>Narrow</b><p>3,000 places to 40 that fit.</p></div>
+    <div class="stage"><span class="n">03</span><b>Rank</b><p>Scored for you, tonight.</p></div>
+    <div class="stage"><span class="n">04</span><b>Combine</b><p>Stops, order, home by 10.</p></div>
+    <div class="stage"><span class="n">05</span><b>Check</b><p>Every fact proved.</p></div>
+  </div>
+  <div class="read"><h3>Fences and magnets</h3><div><p>A fence must be true: veg, under ₹500, seats four. Fail one and the place is out. A magnet is something you’d like; it pulls good places up the list.</p><div class="chips"><span class="chip f">FENCE · veg</span><span class="chip f">FENCE · ₹500</span><span class="chip m">MAGNET · calm</span><span class="chip x">FIND · dessert on the way</span></div></div></div>
+</div>
+<div class="notes"><div><b>Feel</b>Confident, techy, energetic. Closest to recent award-winning studio sites.</div><div><b>Colour</b><div class="sw"><i style="background:#2347FF"></i><i style="background:#D8FF3C"></i><i style="background:#FF5FA2"></i><i style="background:#6AF2C8"></i><i style="background:#0D1033"></i><i style="background:#FFF4E8"></i></div></div><div><b>Rule</b>Background colour changes as you scroll between chapters, tweened smoothly.</div><div><b>Risk</b>Less local: it could belong to any tech product.</div></div>
+</section>
+
+<section class="dir"><div class="label"><b>3. Marina sunset</b><span>Warm and joyful. Coral to gold, like evening on the Marina; deep plum for reading.</span></div>
+<div class="frame v3">
+  <div class="nav"><span>The Cousin</span><span class="pill">Menu</span></div>
+  <div class="hero">
+    <div><h2 class="big">“I’m bored.”<br>Three ideas, <em>checked.</em></h2><p class="lede">An app that knows you and knows Chennai. One sentence in; a checked plan out.</p>
+    <div class="btns"><span class="btn p">See how it works</span><span class="btn s">Goals and scope</span></div></div>
+    <svg class="k" viewBox="0 0 320 320" aria-hidden="true"><g class="d"></g><path class="kl"/></svg>
+  </div>
+  <div class="stages">
+    <div class="stage"><span class="n">01</span><b>Understand</b><p>Your sentence becomes typed pieces.</p></div>
+    <div class="stage"><span class="n">02</span><b>Narrow</b><p>3,000 places to 40 that fit.</p></div>
+    <div class="stage"><span class="n">03</span><b>Rank</b><p>Scored for you, tonight.</p></div>
+    <div class="stage"><span class="n">04</span><b>Combine</b><p>Stops, order, home by 10.</p></div>
+    <div class="stage"><span class="n">05</span><b>Check</b><p>Every fact proved.</p></div>
+  </div>
+  <div class="read"><h3>Fences and magnets</h3><div><p>A fence must be true: veg, under ₹500, seats four. Fail one and the place is out. A magnet is something you’d like; it pulls good places up the list.</p><div class="chips"><span class="chip f">FENCE · veg</span><span class="chip f">FENCE · ₹500</span><span class="chip m">MAGNET · calm</span><span class="chip x">FIND · dessert on the way</span></div></div></div>
+</div>
+<div class="notes"><div><b>Feel</b>Joyful, evening-out, inviting. The stages fade like a sunset.</div><div><b>Colour</b><div class="sw"><i style="background:#FF5A36"></i><i style="background:#FFB86B"></i><i style="background:#FFE16B"></i><i style="background:#1B0A2A"></i><i style="background:#7B5CFF"></i></div></div><div><b>Rule</b>Warm fields for story, plum panels for reading and films.</div><div><b>Risk</b>Warm-heavy; data charts need care to stay readable.</div></div>
+</section>
+<script>
+const picks=[[40,280],[88,136],[184,88],[280,184],[184,232]];
+document.querySelectorAll('svg.k').forEach((svg,si)=>{const g=svg.querySelector('.d');const fills=[['#16130F','#E8344E'],['rgba(255,255,255,.55)','#D8FF3C'],['rgba(27,10,42,.55)','#1B0A2A']][si];
+for(let y=40;y<=280;y+=48)for(let x=40;x<=280;x+=48){const c=document.createElementNS('http://www.w3.org/2000/svg','circle');const p=picks.some(([a,b])=>a===x&&b===y);c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',p?10:4.5);c.setAttribute('fill',p?fills[1]:fills[0]);g.appendChild(c);}
+let d=`M${picks[0][0]} ${picks[0][1]}`;for(let i=0;i<picks.length-1;i++){const p0=picks[i-1]||picks[i],p1=picks[i],p2=picks[i+1],p3=picks[i+2]||p2;d+=` C${p1[0]+(p2[0]-p0[0])/6} ${p1[1]+(p2[1]-p0[1])/6},${p2[0]-(p3[0]-p1[0])/6} ${p2[1]-(p3[1]-p1[1])/6},${p2[0]} ${p2[1]}`;}
+svg.querySelector('.kl').setAttribute('d',d);});
+</script>
+</body>
+</html>
