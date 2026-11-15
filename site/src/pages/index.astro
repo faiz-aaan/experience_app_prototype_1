@@ -6,16 +6,8 @@ import { url } from '../data/url';
 import s1 from '../data/sim/s1.json';
 const pct = (v: number) => `${Math.round(v * 100)}%`;
 const full = s1.res.full.first[0], nearest = s1.res.nearest.first[0];
-// hero kolam: 6 x 6 dot grid, five chosen stops on the grid, one line through them in order
-const grid: [number, number][] = [];
-for (let y = 0; y < 6; y++) for (let x = 0; x < 6; x++) grid.push([40 + x * 48, 40 + y * 48]);
-const picks: [number, number][] = [[40, 280], [88, 136], [184, 88], [280, 184], [184, 232]];
-let d = `M${picks[0][0]} ${picks[0][1]}`;
-for (let i = 0; i < picks.length - 1; i++) {
-  const p0 = picks[i - 1] || picks[i], p1 = picks[i], p2 = picks[i + 1], p3 = picks[i + 2] || p2;
-  d += ` C${p1[0] + (p2[0] - p0[0]) / 6} ${p1[1] + (p2[1] - p0[1]) / 6},${p2[0] - (p3[0] - p1[0]) / 6} ${p2[1] - (p3[1] - p1[1]) / 6},${p2[0]} ${p2[1]}`;
-}
-const isPick = (x: number, y: number) => picks.some(([a, b]) => a === x && b === y);
+// hero: one evening on a sketch of the Chennai coast. Three ideas leave home; two fail a fence; one becomes the route.
+const loop = 'M64 330 C 80 240, 118 158, 176 150 C 232 142, 272 192, 250 244 C 232 292, 150 336, 64 330';
 ---
 <Base slug="" title="The product in one minute">
   <section class="door hero">
@@ -29,11 +21,44 @@ const isPick = (x: number, y: number) => picks.some(([a, b]) => a === x && b ===
           <a class="btn" href={url('goals/')}><span class="roll"><span>Goals and scope</span><span aria-hidden="true">Goals and scope</span></span></a>
         </div>
       </div>
-      <svg class="hero__kolam" viewBox="0 0 320 320" data-hero-kolam role="img" aria-label="A kolam: a grid of dots with one line drawn through five chosen dots, the way a plan connects chosen places">
-        {grid.map(([x, y]) => isPick(x, y)
-          ? <circle cx={x} cy={y} r="8" class="pick" data-pick />
-          : <circle cx={x} cy={y} r="4" />)}
-        <path d={d} data-line />
+      <svg class="hero__route" viewBox="0 0 360 400" data-hero-route role="img" aria-label="A sketch of the Chennai coast. From home, three ideas go out. The rooftop grill fails the budget and the beach shack has no veg menu. The third becomes the route: Kaveri thali at 7:30, Malli dessert at 9:05, home by 9:40.">
+        <defs>
+          <radialGradient id="hero-fade" cx="45%" cy="55%" r="65%"><stop offset="0.55" stop-color="#fff" /><stop offset="1" stop-color="#fff" stop-opacity="0" /></radialGradient>
+          <mask id="hero-mask"><rect width="360" height="400" fill="url(#hero-fade)" /></mask>
+        </defs>
+        <g class="map" data-map mask="url(#hero-mask)">
+          <path class="road" d="M0 70 L330 44 M0 212 L330 190 M0 372 L330 352 M44 0 L62 400 M150 0 L160 400 M244 0 L262 400" />
+          <path class="sea" d="M334 0 C 322 60, 344 122, 330 182 S 342 300, 326 400 L360 400 L360 0 Z" />
+          <path class="coast" d="M334 0 C 322 60, 344 122, 330 182 S 342 300, 326 400" />
+          </g>
+        <g class="map" data-map>
+          <text class="sea-label" transform="translate(350 120) rotate(90)">Bay of Bengal</text>
+        </g>
+        <g class="cand fail" data-cand>
+          <path d="M64 330 C 56 236, 66 150, 96 96" data-cand-line />
+          <g class="x" data-x transform="translate(96 96)"><path d="M-5 -5 L5 5 M5 -5 L-5 5" /></g>
+          <text x="84" y="80" class="name" text-anchor="end">Rooftop grill</text>
+          <text x="84" y="95" class="why" text-anchor="end" data-why>₹1,400 each</text>
+        </g>
+        <g class="cand fail" data-cand>
+          <path d="M64 330 C 150 362, 236 352, 286 326" data-cand-line />
+          <g class="x" data-x transform="translate(286 326)"><path d="M-5 -5 L5 5 M5 -5 L-5 5" /></g>
+          <text x="300" y="356" class="name" text-anchor="end">Beach shack</text>
+          <text x="300" y="371" class="why" text-anchor="end" data-why>no veg menu</text>
+        </g>
+        <path class="route" d={loop} data-route />
+        <g class="stop" data-stop transform="translate(176 150)"><circle r="7" /></g>
+        <g class="stop" data-stop transform="translate(250 244)"><circle r="7" /></g>
+        <g class="labels" data-labels>
+          <text x="186" y="122" class="name">Kaveri thali</text>
+          <text x="186" y="137" class="time">7:30 dinner</text>
+          <text x="238" y="230" class="name" text-anchor="end">Malli dessert</text>
+          <text x="238" y="245" class="time" text-anchor="end">9:05 sweet</text>
+        </g>
+        <g class="home" transform="translate(64 330)"><circle r="9" class="ring" /><circle r="3.5" /></g>
+        <text x="40" y="364" class="name">Home</text>
+        <text x="40" y="379" class="time">leave 7:15 · back 9:40</text>
+        <circle r="4" class="you" data-you cx="64" cy="330" />
       </svg>
     </div>
   </section>
@@ -93,7 +118,7 @@ const isPick = (x: number, y: number) => picks.some(([a, b]) => a === x && b ===
 <style>
   .hero { padding-block: calc(var(--u) * 4) calc(var(--u) * 4.5); overflow: clip; }
   .hero__grid { display: grid; gap: calc(var(--u) * 4); align-items: center; }
-  @media (min-width: 900px) { .hero__grid { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); } }
+  @media (min-width: 900px) { .hero__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
   .hero__text { display: grid; gap: calc(var(--u) * 2.2); }
   .hero__text .lede { max-width: 40ch; }
   .hero__cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.6rem; }
@@ -101,11 +126,24 @@ const isPick = (x: number, y: number) => picks.some(([a, b]) => a === x && b ===
   .btn:hover { border-color: var(--c-rice); }
   .btn--fill { background: var(--c-turmeric); color: var(--c-door); border-color: var(--c-turmeric); }
   .btn--fill:hover { background: var(--c-rice); border-color: var(--c-rice); }
-  .hero__kolam { width: min(100%, 24rem); justify-self: center; }
-  @media (max-width: 899px) { .hero__kolam { width: 56%; justify-self: start; margin-top: -0.5rem; } }
-  .hero__kolam circle { fill: var(--c-rice); opacity: 0.55; }
-  .hero__kolam circle.pick { fill: var(--c-turmeric); opacity: 1; }
-  .hero__kolam path { fill: none; stroke: var(--c-rice); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .hero__route { width: min(100%, 27rem); justify-self: end; overflow: visible; }
+  @media (max-width: 899px) { .hero__route { width: min(100%, 24rem); justify-self: start; } }
+  .hero__route .road { fill: none; stroke: var(--c-rice); stroke-opacity: 0.07; stroke-width: 1; }
+  .hero__route .sea { fill: var(--c-rice); fill-opacity: 0.04; }
+  .hero__route .coast { fill: none; stroke: var(--c-rice); stroke-opacity: 0.35; stroke-width: 1.2; }
+  .hero__route text { font-family: var(--f-body); font-size: 12.5px; fill: var(--c-rice); }
+  .hero__route .sea-label { font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.12em; fill: var(--c-door-muted); }
+  .hero__route .name { font-weight: 600; }
+  .hero__route .time { font-family: var(--f-mono); font-size: 10px; fill: var(--c-turmeric); }
+  .hero__route .why { font-family: var(--f-mono); font-size: 10px; fill: var(--c-kumkum); }
+  .hero__route .cand path { fill: none; stroke: var(--c-rice); stroke-opacity: 0.32; stroke-width: 1.4; stroke-dasharray: 3 5; stroke-linecap: round; }
+  .hero__route .cand .x path { stroke: var(--c-kumkum); stroke-opacity: 1; stroke-width: 2.2; stroke-dasharray: none; }
+  .hero__route .cand .name { fill: var(--c-door-muted); text-decoration: line-through; }
+  .hero__route .route { fill: none; stroke: var(--c-turmeric); stroke-width: 3; stroke-linecap: round; }
+  .hero__route .stop circle { fill: var(--c-door); stroke: var(--c-turmeric); stroke-width: 3; }
+  .hero__route .home circle { fill: var(--c-rice); }
+  .hero__route .home .ring { fill: none; stroke: var(--c-rice); stroke-width: 1.5; }
+  .hero__route .you { fill: var(--c-rice); opacity: 0; }
   .small { font-size: 0.92rem; }
   .example { display: grid; gap: 1.1rem; max-width: 42rem; }
   .reply { justify-self: start; background: var(--c-card); border: 1px solid var(--c-line); border-left: 3px solid var(--c-turmeric); border-radius: 4px 18px 18px 18px; padding: 1rem 1.2rem; display: grid; gap: 0.35rem; max-width: 34rem; }

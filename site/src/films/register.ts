@@ -20,6 +20,6 @@ onPage(() => {
     const f = FILMS[el.dataset.film as keyof typeof FILMS]; if (f) offs.push(mountFilm(el, f));
   });
   document.querySelectorAll<HTMLElement>('[data-kolam]').forEach((el) => offs.push(mountKolam(el)));
-  document.querySelectorAll<SVGSVGElement>('[data-hero-kolam]').forEach((el) => { const o = mountHero(el); if (o) offs.push(o); });
+  document.querySelectorAll<SVGSVGElement>('[data-hero-route]').forEach((el) => { const o = mountHero(el); if (o) offs.push(o); });
   return () => offs.forEach((o) => o());
 });
