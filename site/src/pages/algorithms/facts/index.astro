@@ -1,0 +1,41 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Status from '../../../components/Status.astro';
+import Film from '../../../components/Film.astro';
+import { url } from '../../../data/url';
+---
+<Base slug="algorithms/facts/" title="Facts by code" description="Why every name, price and time The Cousin shows is printed by code from data, and the AI only writes the reasons.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · Stage 5</p>
+    <h1 class="h1" data-split="lines" data-intro>Code prints the facts. The AI writes the reasons.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">An AI model can write a lovely sentence that says a place is open till 11 when it closes at 10. One wrong fact breaks trust for good.</p>
+      <Status s="designed" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="prose"><p>The AI never writes a fact. It gets place IDs and returns a short reason for each, like “calm room, the thali you loved, five minutes from the sweet shop”. Code fills in the card: name, price band, opening time, travel time, all from data. A checker then scans the reason for any stray number or name and removes it.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-facts" name="facts" title="Film · Facts by code" length="15 s" label="Animated film: the AI returns IDs and reasons; code prints name, hours and price on the card; a checker strikes “open till 11” from the reason" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">On the example</p>
+    <div class="tbl"><table><thead><tr><th>Part of the card</th><th>Written by</th><th>From</th></tr></thead><tbody><tr><td>Kaveri thali place</td><td>Code</td><td>Google Places, fetched now</td></tr><tr><td>About ₹420 each</td><td>Code</td><td>Our cost band, with date</td></tr><tr><td>Open till 10:30 pm</td><td>Code</td><td>Google, live</td></tr><tr><td>12 min from home</td><td>Code</td><td>Google Routes</td></tr><tr><td>“Calm, the thali you loved”</td><td>AI</td><td>Notebook + tags</td></tr><tr><td>“Confirmed veg by the place”</td><td>Code</td><td>Our confirmed facts</td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The contract</summary>
+      <div class="prose">
+        <pre class="code">AI in:  [&#123;id, tags, notebook_reasons&#125;]
+AI out: [&#123;id, reason&#125;]          # JSON, validated
+card  = template(facts[id]) + reason
+reject reason if it contains digits, times, prices or names not in facts[id]</pre>
+        <p>Validation failure falls back to a template reason. This is the one place where we trust no model output at all.</p>
+      </div>
+    </details>
+  </section>
+</Base>

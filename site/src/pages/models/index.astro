@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import Film from '../../components/Film.astro';
+import { url } from '../../data/url';
+---
+<Base slug="models/" title="When data grows: the models" description="Which rules The Cousin replaces with trained models as data grows, which it never replaces, and the test each model must pass.">
+  <header class="wrap phead">
+    <p class="chapter">09 · Models</p>
+    <h1 class="h1" data-split="lines" data-intro>Start with rules. Earn each model with a live test.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">On day one there is no data to learn from, so rules do the work. As people go out, we gather outcomes, and some rules can be replaced by models that learn. Only where they win.</p>
+      <Status s="designed" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-models" name="models" title="Film · The ladder" length="21.5 s" label="Animated film: seven parts of the system across four stages of growth, from 50 to 50,000 people; which parts change to models and which stay code" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">The ladder</p>
+    <div class="tbl"><table><thead><tr><th>Part</th><th>Day one</th><th>Replaced by</th><th>When</th><th>Never learned?</th></tr></thead><tbody><tr><td>Understand + explain</td><td>AI model (Claude)</td><td>A smaller tuned model, for cost</td><td>Many cities</td><td></td></tr><tr><td>Fences + facts</td><td>Code</td><td>Nothing</td><td>Never</td><td>Yes: they have right answers</td></tr><tr><td>Route solver</td><td>Exact search</td><td>OR-Tools for longer days</td><td>Many cities</td><td>Yes: it’s maths, not taste</td></tr><tr><td>Matching by feel</td><td>Tags</td><td>Embeddings: “romantic”, “local” without a tag</td><td>~1,000 people</td><td></td></tr><tr><td>Ranking (magnets)</td><td>Weighted rules</td><td>Logistic regression, then gradient-boosted trees</td><td>~1,000 → ~5,000</td><td></td></tr><tr><td>Wild cards</td><td>Fixed mix</td><td>Thompson sampling bandit</td><td>~1,000 people</td><td></td></tr><tr><td>Change of taste</td><td>Listen + monthly catch-up</td><td>A sequence model</td><td>Many cities</td><td></td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">The rule for every model</p>
+    <div class="prose"><p>A model replaces a rule only if it beats it in a live test with real people: half see the rule, half see the model, and we compare what happened (did they go, did they love it). If it doesn’t win clearly, the rule stays. Models never see the fences; they only rank what is allowed.</p><p class="muted">The simulated results behind this are on <a href={url('tests/')}>test runs</a>.</p></div>
+  </section>
+</Base>

@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import Film from '../../components/Film.astro';
+import { url } from '../../data/url';
+---
+<Base slug="risks/" title="Risks and how we tackle them" description="The main risks for The Cousin and how each is handled.">
+  <header class="wrap phead">
+    <p class="chapter">12 · Risks</p>
+    <h1 class="h1" data-split="lines" data-intro>What could go wrong, and what we do about it.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">Most risks here are about trust: one wrong fact, one unsafe suggestion or one creepy message can lose a person for good.</p>
+      <Status s="designed" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">The list</p>
+    <div class="tbl"><table><thead><tr><th>Risk</th><th>Why it matters</th><th>How we tackle it</th></tr></thead><tbody><tr><td>Wrong listing facts</td><td>12% of diet or allergy answers broke the need when listings were trusted</td><td>Count only place-confirmed claims; say so on the card</td></tr><tr><td>AI writes a wrong fact</td><td>Breaks trust instantly</td><td>AI never writes facts; checker strikes stray numbers</td></tr><tr><td>Unsafe suggestion</td><td>Safety and reputation</td><td>Typed won’t-checks before any ranking; cautious by default</td></tr><tr><td>Stale notebook</td><td>Plans stop fitting a changed life</td><td>Listen, monthly catch-up, surprise meter</td></tr><tr><td>Repetitive plans</td><td>People get bored and leave</td><td>Mix, rest period, wild cards</td></tr><tr><td>Google cost and terms</td><td>Cost per reply; storage rules</td><td>Search near only; 12 places to the matrix; store IDs only</td></tr><tr><td>Cold start</td><td>No data for new people</td><td>Taste seed on day one; rules that need no data</td></tr><tr><td>Too many notifications</td><td>Annoyance, uninstalls</td><td>A few a week, always useful; easy to quiet</td></tr><tr><td>Privacy</td><td>Notebooks are personal</td><td>Visible, editable notebook; delete anytime; no selling data</td></tr><tr><td>Thin supply at launch</td><td>Few places with confirmed facts</td><td>One area first; facts gathered by hand</td></tr></tbody></table></div>
+  </section>
+</Base>

@@ -6,7 +6,7 @@ export type Pal = Record<'door' | 'rice' | 'muted' | 'line' | 'turmeric' | 'kumk
 export function palette(): Pal {
   const cs = getComputedStyle(document.documentElement);
   const v = (n: string) => cs.getPropertyValue(n).trim();
-  return { door: v('--c-door'), rice: v('--c-rice'), muted: v('--c-door-muted'), line: v('--c-door-line'), turmeric: v('--c-turmeric'), kumkum: '#D9907F', code: '#8CC2A8', ink: v('--c-fg') };
+  return { door: v('--c-door'), rice: v('--c-rice'), muted: v('--c-door-muted'), line: v('--c-door-line'), turmeric: v('--c-turmeric'), kumkum: '#FF6B6E', code: '#7C9BFF', ink: v('--c-fg') };
 }
 export const F = {
   d: (s: number, w = 800) => `${w} ${s}px Host, ui-sans-serif, system-ui, sans-serif`,

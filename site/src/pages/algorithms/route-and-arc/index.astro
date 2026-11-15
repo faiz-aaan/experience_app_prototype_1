@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Status from '../../../components/Status.astro';
+import Film from '../../../components/Film.astro';
+import { url } from '../../../data/url';
+---
+<Base slug="algorithms/route-and-arc/" title="Route puzzle and evening arc" description="How The Cousin picks which stops to combine and in what order, so the evening flows and everyone is home on time.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · Stage 4</p>
+    <h1 class="h1" data-split="lines" data-intro>The best evening is a set of stops in the right order.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">The best dinner and the best dessert stop may be on opposite sides of the city. The route puzzle picks the pair that works together, in the order an evening should go.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="pair">
+      <div class="term code"><h2 class="h3">The route puzzle</h2><p>Try every dinner with every dessert. Throw out any pair that gets home late or needs a big detour. Of what’s left, keep the best total.</p></div>
+      <div class="term gold"><h2 class="h3">The evening arc</h2><p>An evening has a shape: an easy start, the main thing in the middle, a gentle end. Dessert after dinner, the loud bar before the quiet walk, never the other way.</p></div>
+    </div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-route" name="route" title="Film · The route puzzle" length="18 s" label="Animated film: home, three dinner places and three dessert stops; travel times between all of them; the solver tries pairs, rejects late or detour plans, and shows the timeline 7:30, 9:05, home 9:40" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">On the example</p>
+    <div class="tbl"><table><thead><tr><th>Try</th><th>Dinner then dessert</th><th>Home at</th><th>Result</th></tr></thead><tbody><tr><td>1</td><td>Best dinner, best dessert</td><td>10:20</td><td>Out: late</td></tr><tr><td>2</td><td>Best dinner, dessert across town</td><td>9:55</td><td>Out: big detour, no buffer</td></tr><tr><td>3</td><td>Kaveri thali, Malli sweets</td><td>9:40</td><td>Kept: best total that fits</td></tr></tbody></table></div><p class="muted">The deadline has a 15 minute traffic buffer: a plan that lands at 9:55 counts as late.</p>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">What we learned</p>
+    <div class="prose"><p><b>Exact search is fast enough.</b> With 6 dinners and 6 desserts there are only 36 pairs, so the solver checks them all in milliseconds. Three or four stops is still small. A heavier solver (Google OR-Tools) is only needed for longer days or many cities.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The solver</summary>
+      <div class="prose">
+        <pre class="code">T = route_matrix([home] + dinners + desserts)      # one Google call, 13 × 13
+for d in dinners: for s in desserts:
+    t_home = leave + T[home,d] + stay(d) + T[d,s] + stay(s) + T[s,home]
+    if t_home > deadline − 15 min: continue
+    if T[d,s] + T[s,home] > 1.3 × T[d,home]: continue     # "on the way"
+    total = score(d) + score(s) − arc_penalty(d, s)
+best = argmax total</pre>
+        <p>Arc penalties come from a small table of stop types (e.g. dessert before dinner, loud after quiet). Stay times come from typical visit lengths by kind of place.</p>
+      </div>
+    </details>
+  </section>
+</Base>

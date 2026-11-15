@@ -1,0 +1,47 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Status from '../../../components/Status.astro';
+import Film from '../../../components/Film.astro';
+import { url } from '../../../data/url';
+---
+<Base slug="algorithms/asking/" title="When to ask a question" description="How The Cousin decides whether to ask a counter-question or plan with a stated guess.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · After stage 1</p>
+    <h1 class="h1" data-split="lines" data-intro>Ask only when the answer would change the plan.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">Every question costs the person a moment. A cousin who asks five questions before suggesting dinner is tiring. One who never asks gets it wrong for ten people.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="prose"><p>For each piece that wasn’t said, code runs three gates, in order:</p>
+    <ol class="steps"><li><span><b>Can we fill it safely?</b> From the notebook (you usually spend about ₹600) or from today. If yes, fill it silently.</span></li><li><span><b>Would the answer change the picks?</b> If every place left fits either way, don’t ask.</span></li><li><span><b>Is a wrong guess expensive?</b> Cheap to fix: guess, and say the guess out loud. Expensive: ask.</span></li></ol>
+    <p>At most one question per reply, with tap-able answers. The AI only words the question; code decides whether to ask it.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-ask" name="ask" title="Film · When to ask" length="16 s" label="Animated film: five unknown pieces pass through three gates into four outcomes: fill silently, don’t ask, guess out loud, ask" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">On the example</p>
+    <div class="tbl"><table><thead><tr><th>Unknown</th><th>Gate result</th><th>What happens</th></tr></thead><tbody><tr><td>Budget (4 people)</td><td>Notebook knows ~₹600</td><td>Filled silently</td></tr><tr><td>Seats for 4</td><td>Every place left seats 4</td><td>Not asked</td></tr><tr><td>Spice level</td><td>Matters, cheap to fix</td><td>“Assuming medium spice”</td></tr><tr><td>Indoor or outdoor</td><td>Picks come out the same</td><td>Not asked</td></tr><tr><td>Budget (10 people)</td><td>Changes picks, costly if wrong</td><td>Asked: “Roughly how much each?”</td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">What we learned</p>
+    <div class="prose"><p><b>Fewer questions, same accuracy.</b> In the simulation the cousin asked a question in about 14% of conversations, and conversations took about 2.5 messages on average, against about 3 for a plain popular list.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The gate</summary>
+      <div class="prose">
+        <pre class="code">ask(slot) = not fillable(slot)
+          and changes_top_k(slot)            # re-rank under each answer
+          and cost_if_wrong(slot) > τ
+ask at most one slot per turn: argmax value_of_information</pre>
+        <p>“Changes the picks” is measured directly: re-run ranking under each plausible answer and see if the top three differ. This is a cheap value-of-information test.</p>
+      </div>
+    </details>
+  </section>
+</Base>

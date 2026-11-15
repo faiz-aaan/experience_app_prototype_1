@@ -1,0 +1,40 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Status from '../../../components/Status.astro';
+import Film from '../../../components/Film.astro';
+import { url } from '../../../data/url';
+---
+<Base slug="algorithms/memory/" title="Memory and changing taste" description="How the notebook remembers what someone likes, and how it notices when their life changes.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · Stage 3</p>
+    <h1 class="h1" data-split="lines" data-intro>Remember slowly. Notice change quickly.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">The notebook is what the cousin knows about you. It must not forget a real taste after one bad night, but it must notice when your life changes.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="prose"><p>Every outing nudges the notebook a little. Nudges are small on purpose, so one bad evening can’t erase years of liking South Indian food. But that makes the notebook slow when life really changes: a new job, a new gym habit, a new baby. So there are three ways to catch a change, and they work best together.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-memory" name="memory" title="Film · Memory and changing taste" length="22 s" label="Animated film: a notebook line for late nights; life changes; the line barely moves; listening, a monthly catch-up and a surprise meter each catch the change" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Three ways to catch a change</p>
+    <div class="tbl"><table><thead><tr><th>Way</th><th>How it works</th><th>Caught in the test</th></tr></thead><tbody><tr><td>Listen</td><td>A passing mention (“joined a gym, up at 5 now”) updates the notebook at once</td><td>82% of changes, about 2 weeks</td></tr><tr><td>Monthly catch-up</td><td>A 20 second card: “still into late nights?”</td><td>95%, about 1 week</td></tr><tr><td>Surprise meter</td><td>Counts ideas passed on in a row and brings the catch-up forward</td><td>31% alone, about 5 weeks late</td></tr><tr><td>All together</td><td>Listen first, catch up monthly, meter only speeds the catch-up</td><td>99.5%, under a week</td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The update rule</summary>
+      <div class="prose">
+        <pre class="code">notebook ← (1 − α)·notebook + α·outcome      α ≈ 0.08
+mention → replace the line, flagged "said"
+meter: passed_in_a_row ≥ 3 → move catch-up to next session</pre>
+        <p>The notebook is an exponential moving average over tag vectors. In the drift simulation, the meter on its own raised many false alarms; using it only to move a catch-up forward avoids nagging.</p>
+      </div>
+    </details>
+  </section>
+</Base>

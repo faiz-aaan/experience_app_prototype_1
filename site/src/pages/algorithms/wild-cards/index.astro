@@ -1,0 +1,41 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Status from '../../../components/Status.astro';
+import Film from '../../../components/Film.astro';
+import { url } from '../../../data/url';
+---
+<Base slug="algorithms/wild-cards/" title="Wild cards that learn" description="How The Cousin learns which kinds of surprise each person enjoys, using Thompson sampling.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · Stage 3</p>
+    <h1 class="h1" data-split="lines" data-intro>Surprises that learn what you like.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">A wild card is only good if it’s a surprise this person enjoys. Some love a dawn trip; others never will. The cousin learns which, by trying gently.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="prose"><p>There are a few kinds of surprise: a new cuisine, a craft class, a dawn nature trip, a community meetup, live music. For each kind, the cousin keeps a belief: how likely is this person to love it? At first nothing is known. Each time it shows a wild card, it draws a guess from each belief and tries the kind with the highest guess. A “loved it” moves that belief up, a “not for me” moves it down. Kinds that keep missing get tried less, but never zero, because people change.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-wild" name="wild" title="Film · Wild cards that learn" length="22 s" label="Animated film: five belief curves, flat at first; forty rounds of guesses; loved surprises push curves right, misses push them left; the method finds what works for this person" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Why this method</p>
+    <div class="prose"><p>This is Thompson sampling, the same family of methods used to test headlines and ads. It balances trying new things with using what works, without a fixed rule like “one surprise in five”. It needs very little data, which is why it can run from day one.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The bandit</summary>
+      <div class="prose">
+        <pre class="code">each kind k: Beta(a_k, b_k), start (1, 1)
+show wild card: draw p_k ~ Beta(a_k, b_k), pick argmax p_k
+loved → a_k += 1;  not for me → b_k += 1
+slow decay toward (1,1) so old evidence fades</pre>
+        <p>Only kinds whose candidates passed every fence are eligible, so a surprise can never break a rule.</p>
+      </div>
+    </details>
+  </section>
+</Base>

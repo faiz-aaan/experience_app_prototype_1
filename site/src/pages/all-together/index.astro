@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import Film from '../../components/Film.astro';
+import { url } from '../../data/url';
+---
+<Base slug="all-together/" title="All together: one evening" description="How every algorithm works together in one real conversation, and why follow-ups are cheap.">
+  <header class="wrap phead">
+    <p class="chapter">05 · All together</p>
+    <h1 class="h1" data-split="lines" data-intro>One conversation. Each message runs only what it needs.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">People don’t speak in one perfect sentence. They change their minds, ask side questions and start over. The card keeps the machine steady through all of it.</p>
+      <Status s="designed" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">The card</p>
+    <div class="prose"><p>Behind every conversation sits one card: who is coming, what to find, the rules that must hold, and the tastes for tonight. The AI keeps the card up to date from each message. Code reads the card and decides which stages need to run again. A change of taste re-runs ranking. A new group size re-runs the search. A side question runs nothing.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-together" name="together" title="Film · One conversation, five messages" length="23 s" label="Animated film: five chat messages; the card updates; a strip of seven stages shows which run, which are reused and which are skipped for each message" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Every algorithm, in order</p>
+    <div class="tbl"><table><thead><tr><th>Step</th><th>Algorithm</th><th>On the example</th></tr></thead><tbody><tr><td>1</td><td>Understand (AI)</td><td>Two things to find, four rules, one taste</td></tr><tr><td>2</td><td><a href={url('algorithms/saying-no/')}>Saying no</a></td><td>Everything is allowed: serve</td></tr><tr><td>3</td><td><a href={url('algorithms/asking/')}>Asking</a></td><td>Budget filled from notebook; no question</td></tr><tr><td>4</td><td><a href={url('algorithms/fences-and-magnets/')}>Fences</a></td><td>3,000 places → about 40</td></tr><tr><td>5</td><td>Magnets, <a href={url('algorithms/memory/')}>memory</a>, <a href={url('algorithms/rest-period/')}>rest</a></td><td>40 ranked; last Friday’s place rests</td></tr><tr><td>6</td><td><a href={url('algorithms/mix-and-variety/')}>Mix</a>, <a href={url('algorithms/wild-cards/')}>wild cards</a></td><td>6 dinners + 6 desserts, varied</td></tr><tr><td>7</td><td><a href={url('algorithms/route-and-arc/')}>Route and arc</a></td><td>Kaveri 7:30 → Malli 9:05 → home 9:40</td></tr><tr><td>8</td><td><a href={url('algorithms/facts/')}>Facts by code</a></td><td>Card printed from data; AI writes reasons</td></tr><tr><td>9</td><td>Learn</td><td>Tomorrow: “How was it?” updates the notebook</td></tr></tbody></table></div>
+  </section>
+</Base>

@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import { url } from '../../data/url';
+import clean from '../../data/sim/m5k.json';
+import small from '../../data/sim/m1k.json';
+import messy from '../../data/sim/s2.json';
+import drift from '../../data/sim/s4b.json';
+import agg from '../../data/sim/stress_agg.json';
+const pc = (v: number) => `${Math.round(v * 100)}%`;
+const arms: [string, string][] = [['popular', 'Popular list (no cousin)'], ['full', 'The cousin, rules only'], ['full+lr', '+ logistic regression'], ['full+gbdt', '+ gradient-boosted trees'], ['full+mlp', '+ small neural net'], ['oracle', 'Perfect knowledge (ceiling)']];
+const worlds = [{ name: 'Clean world, 5,000 people', d: clean as any }, { name: 'Messy world: noisy listings and moods', d: messy as any }];
+const auc = [['rules', 'Rules'], ['lr', 'Logistic regression'], ['gbdt', 'Gradient-boosted trees'], ['mlp', 'Small neural net']];
+const dr: [string, string][] = [['full', 'Nothing'], ['full+drift', 'Surprise meter alone'], ['full+mention', 'Listening'], ['full+refresh', 'Monthly catch-up'], ['full+refresh+mention', 'Listening + catch-up']];
+---
+<Base slug="tests/" title="Test runs: rules and models" description="Simulation results for The Cousin: rules against a popular list, with and without trained models, in a clean and a messy world.">
+  <header class="wrap phead">
+    <p class="chapter">10 · Test runs</p>
+    <h1 class="h1" data-split="lines" data-intro>Rules do most of the work. Models add a little, where data is clean.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">Before real people, we ran the whole cousin on simulated people with hidden tastes: thousands of conversations, each judged by whether they would accept, go and love it.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+
+  <section class="wrap row">
+    <p class="chapter">How to read this</p>
+    <div class="prose">
+      <p><b>First pick accepted</b>: the first suggestion was the one they took. <b>Loved it</b>: they’d rate the evening top marks. <b>New find</b>: a place new to them that they liked. <b>Repeat</b>: a recently seen place was suggested again (lower is better).</p>
+      <p class="muted">Simulated people are not real people. These numbers compare designs with each other; they don’t predict launch numbers.</p>
+    </div>
+  </section>
+
+  {worlds.map((w) => (
+    <section class="wrap row">
+      <p class="chapter">{w.name}</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Design</th><th class="num">First pick accepted</th><th class="num">Loved it</th><th class="num">New find</th><th class="num">Repeat</th></tr></thead>
+          <tbody>{arms.map(([k, n]) => { const r = w.d.res[k].all; return <tr><td>{n}</td><td class="num">{pc(r.first)}</td><td class="num">{pc(r.loved)}</td><td class="num">{pc(r.newfind)}</td><td class="num">{pc(r.repeat)}</td></tr>; })}</tbody>
+        </table>
+      </div>
+    </section>
+  ))}
+
+  <section class="wrap row">
+    <p class="chapter">What it means</p>
+    <div class="prose">
+      <p><b>The cousin beats a popular list by a lot.</b> First pick accepted rises from {pc(clean.res.popular.all.first)} to {pc(clean.res.full.all.first)} in the clean world, and from {pc(messy.res.popular.all.first)} to {pc(messy.res.full.all.first)} in the messy one, with rules alone.</p>
+      <p><b>Models add a few points, not a leap.</b> The simplest model, logistic regression, added the most in the clean world ({pc(clean.res['full+lr'].all.first)}). In the messy world all models were within about a point of rules. That’s why each model must win a live test before it replaces a rule (see <a href={url('models/')}>models</a>).</p>
+      <p><b>There is room above.</b> A design with perfect knowledge would reach {pc(clean.res.oracle.all.first)}. Most of that gap is knowing the person better, which comes from outcomes and catch-ups, not bigger models.</p>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">How well each ranker predicts “loved it”</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Ranker</th><th class="num">1,000 people</th><th class="num">5,000 people</th><th class="num">Messy world</th></tr></thead>
+        <tbody>{auc.map(([k, n]) => <tr><td>{n}</td><td class="num">{(small as any).auc[k].toFixed(2)}</td><td class="num">{(clean as any).auc[k].toFixed(2)}</td><td class="num">{(messy as any).auc[k].toFixed(2)}</td></tr>)}</tbody>
+      </table>
+    </div>
+    <p class="muted">AUC: 0.5 is a coin flip, 1.0 is perfect. Trees and small nets predict better, but better prediction only partly turned into better evenings.</p>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">When taste changes</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>How we notice</th><th class="num">Changes caught</th><th class="num">Loved it, after the change</th></tr></thead>
+        <tbody>{dr.map(([k, n]) => { const r = (drift as any)[k]; return <tr><td>{n}</td><td class="num">{pc(r.hit)}</td><td class="num">{pc(r.post)}</td></tr>; })}</tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">Stress test</p>
+    <div class="facts">
+      <div class="fact"><b>{agg.listed.n.toLocaleString('en-IN')}</b><span>runs of 68 hard requests</span></div>
+      <div class="fact"><b>{pc(agg.listed.acc)}</b><span>right verdict: serve, ask or say no</span></div>
+      <div class="fact"><b>{(agg.confirmed.hard_viol * 100).toFixed(1)}%</b><span>diet or allergy needs broken, with confirmed facts</span></div>
+    </div>
+  </section>
+</Base>

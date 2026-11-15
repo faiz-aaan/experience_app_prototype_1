@@ -7,24 +7,24 @@
 @font-face { font-family: 'Martian'; src: url('../assets/fonts/martian-600-normal.woff2') format('woff2'); font-weight: 600; font-display: swap; }
 
 :root {
-  /* Soothing palette: soft sage ground, deep moss-ink for films, muted saffron used sparingly. */
-  --c-bg: #ECEFE9;          /* pale sage: reading ground (not stark white) */
-  --c-fg: #1F2723;          /* ink */
-  --c-muted: #56605A;       /* AA on ground */
-  --c-line: rgb(31 39 35 / 0.12);
-  --c-door: #23302B;        /* deep moss: films and hero */
-  --c-rice: #EEF0E8;        /* soft rice-white line */
-  --c-door-muted: #B3BDB6;  /* AA on moss */
-  --c-door-line: rgb(238 240 232 / 0.14);
-  --c-turmeric: #E3B35C;    /* muted saffron: chosen stops, AI */
-  --c-turmeric-ink: #8B6420;/* saffron for text on light */
-  --c-kumkum: #A85A4A;      /* soft clay: fences, "no" (text on light) */
-  --c-code: #4C7A66;        /* sage: code work (text on light) */
-  --c-indigo: #5B6C9E;      /* dusty indigo: secondary accent */
-  --c-sand: #E6DFD0;        /* warm sand panels */
+  /* Ink and marigold: white page, black film sections, one warm accent. */
+  --c-bg: #FFFFFF;          /* page */
+  --c-fg: #0B0B0B;          /* ink */
+  --c-muted: #5C5C5C;       /* AA on white */
+  --c-line: rgb(11 11 11 / 0.1);
+  --c-door: #0B0B0B;        /* black: films and hero */
+  --c-rice: #FFFFFF;        /* white line on black */
+  --c-door-muted: #A8A8A8;  /* AA on black */
+  --c-door-line: rgb(255 255 255 / 0.14);
+  --c-turmeric: #F2A900;    /* marigold: chosen stops, primary actions, AI */
+  --c-turmeric-ink: #9A6A00;/* marigold for text on white */
+  --c-kumkum: #E5484D;      /* red: fences, "no" */
+  --c-code: #2F5BEA;        /* cobalt: code work */
+  --c-indigo: #2F5BEA;
+  --c-sand: #F4F4F2;        /* sidebar */
   --c-accent: var(--c-code);
   --c-curtain: var(--c-door);
-  --c-card: #F6F7F3;
+  --c-card: #FAFAFA;
 
   --f-display: 'Host', ui-sans-serif, system-ui, sans-serif;
   --f-body: 'Host', ui-sans-serif, system-ui, sans-serif;

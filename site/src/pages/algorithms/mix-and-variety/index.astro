@@ -1,0 +1,48 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Status from '../../../components/Status.astro';
+import Film from '../../../components/Film.astro';
+import { url } from '../../../data/url';
+---
+<Base slug="algorithms/mix-and-variety/" title="Safe, stretch, wild and variety" description="How The Cousin keeps three suggestions from being three copies of the same idea: a safe bet, a stretch and a wild card.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · Stage 3</p>
+    <h1 class="h1" data-split="lines" data-intro>Three good ideas, not the same idea three times.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">Ranking alone puts the three most similar places on top. A cousin would offer one sure thing, one a little new, and sometimes one surprise.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="pair three">
+      <div class="term magnet"><h2 class="h3">Safe</h2><p>The best match for this person tonight. If they only read one line, this one should be right.</p></div>
+      <div class="term gold"><h2 class="h3">Stretch</h2><p>Still a strong match, but a little newer: a cuisine they’ve tried once, a part of town they rarely visit.</p></div>
+      <div class="term fence"><h2 class="h3">Wild</h2><p>Something new to them, picked only from ideas that still pass every fence and fit their taste. Never random.</p></div>
+    </div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-mix" name="mix" title="Film · Safe, stretch, wild" length="15 s" label="Animated film: allowed ideas as circles sized by match; plain ranking picks three similar ones; the mix picks a safe bet, shrinks similar ideas, then picks a stretch and a wild card" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">On the example</p>
+    <div class="tbl"><table><thead><tr><th>Slot</th><th>Dinner</th><th>Why it’s here</th></tr></thead><tbody><tr><td>Safe</td><td>Kaveri thali place</td><td>South Indian, calm, loved last month</td></tr><tr><td>Stretch</td><td>A Gujarati thali house</td><td>Veg and calm, a cuisine tried once</td></tr><tr><td>Wild</td><td>A rooftop millet café</td><td>New idea, still veg, under ₹500 and on the way</td></tr></tbody></table></div><p class="muted">The wild slot is not on every reply. How often it appears, and which kinds of surprise, is learned per person: see <a href={url('algorithms/wild-cards/')}>wild cards</a>.</p>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">What we learned</p>
+    <div class="prose"><p><b>Variety is what makes people come back.</b> In the simulations, suggesting what is popular repeated a recently seen place in 11 to 17% of plans. With the mix and the rest period, that fell to 6 to 7%, while the first suggestion was accepted more often, not less.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The re-ranking formula</summary>
+      <div class="prose">
+        <pre class="code">pick 1 = argmax score(x)
+pick k = argmax  λ·score(x) − (1−λ)·max_sim(x, picked)     # MMR
+λ = 0.7 for stretch;  wild drawn from novelty-weighted pool</pre>
+        <p>This is maximal marginal relevance (MMR), the standard way search engines diversify results. Similarity is cosine over the tag vector today, and over embeddings once we have them.</p>
+      </div>
+    </details>
+  </section>
+</Base>

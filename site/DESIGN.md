@@ -31,19 +31,18 @@ The founder saw all three as a preview and chose A.
 
 ## Art direction
 
-**Palette**
+**Palette** (Ink + marigold, chosen 15 Nov 2026 after "too poppy" and "too dull" rounds)
 
-| Role | Hex | Source |
+| Role | Hex | Note |
 |---|---|---|
-| ground (reading) | `#F3F2EC` | lime-washed wall |
-| doorstep (films, hero) | `#161815` | wet doorstep stone where kolam is drawn |
-| ink | `#141513` | |
-| rice (ink on doorstep) | `#F2F0E8` | rice-flour line |
-| muted | `#5D5E56` (on ground, AA) / `#B4B2A8` (on doorstep, AA) | |
-| line | `rgb(20 21 19 / .14)` | |
-| accent: turmeric | `#E8A317` (fills, on dark) / `#8A5A00` (text on light) | turmeric powder in coloured kolams; marks AI work and chosen stops |
-| kumkum | `#B8322A` | marks fences and "no" |
-| code teal | `#2E7D6F` | marks code work (used sparingly) |
+| ground (reading) | `#FFFFFF` | white page, `#F4F4F2` sand for the rail |
+| doorstep (films, hero) | `#0B0B0B` | near-black stage where the kolam is drawn |
+| ink | `#0B0B0B` | |
+| rice (ink on doorstep) | `#FFFFFF` | |
+| muted | `#5C5C5C` (on white, AA) / `#A8A8A8` (on black, AA) | |
+| accent: marigold | `#F2A900` (fills, on dark) / `#9A6A00` (text on light) | AI work, chosen stops, play button |
+| kumkum red | `#E5484D` (light) / `#FF6B6E` (on dark) | fences and "no" |
+| code blue | `#2F5BEA` (light) / `#7C9BFF` (on dark) | code work and magnets |
 
 The warm off-white ground is paired with a grotesk and no terracotta, so it avoids the "cream + serif + terracotta" default.
 

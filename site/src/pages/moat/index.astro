@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import Film from '../../components/Film.astro';
+import { url } from '../../data/url';
+---
+<Base slug="moat/" title="The moat, communities and events" description="Why The Cousin gets harder to copy with use: outcome data, notebooks, our own facts, hidden gems, friends, clubs and events.">
+  <header class="wrap phead">
+    <p class="chapter">08 · Moat</p>
+    <h1 class="h1" data-split="lines" data-intro>Features can be copied. Years of evenings can’t.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">Any team can call the same Google APIs and the same AI model. What they can’t copy is what we learn from every outing.</p>
+      <Status s="designed" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-moat" name="moat" title="Film · The flywheel" length="12 s" label="Animated film: a flywheel of more outings, more outcome data, better picks and more trust" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">What builds up</p>
+    <div class="tbl"><table><thead><tr><th>Asset</th><th>Why it’s hard to copy</th></tr></thead><tbody><tr><td>Outcome data</td><td>Who went, with whom, and whether they loved it. Google has ratings, not outcomes.</td></tr><tr><td>Notebooks</td><td>Each person’s taste, built over months. Leaving means starting over.</td></tr><tr><td>Our own facts</td><td>Veg confirmed by the place, cost bands, seats, quiet hours. Checked by us.</td></tr><tr><td>Hidden gems</td><td>Small places locals love that rank low on Google.</td></tr><tr><td>Friend graph</td><td>Plans made with friends; who likes going out with whom.</td></tr><tr><td>Clubs and communities</td><td>Running clubs, book clubs, pottery nights: recurring, local, owned with organisers.</td></tr><tr><td>Events</td><td>Organisers list with us because we bring the right people, not just more.</td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Communities and events</p>
+    <div class="prose"><p>Clubs are the strongest loop: going back is the goal, so the <a href={url('algorithms/rest-period/')}>rest period</a> runs in reverse and a club you liked gets a bonus. Events fit into plans like any other stop, with their own fences: date, seats, age, price. Organisers get a simple dashboard: who came, who came back.</p></div>
+  </section>
+</Base>

@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import Film from '../../components/Film.astro';
+import { url } from '../../data/url';
+---
+<Base slug="decisions/" title="Open decisions and glossary" description="The decisions still open for The Cousin, and the words used across these pages.">
+  <header class="wrap phead">
+    <p class="chapter">13 · Decisions</p>
+    <h1 class="h1" data-split="lines" data-intro>What we still need to decide together.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">These are the calls for the founders. Each has a recommendation, but none is settled.</p>
+      <Status s="open" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">Open decisions</p>
+    <div class="tbl"><table><thead><tr><th>Decision</th><th>Options</th><th>Leaning</th></tr></thead><tbody><tr><td>Who picks the final three?</td><td>Code only, or the AI chooses from the safe shortlist</td><td>Test AI choice: it understands “romantic”, “local”</td></tr><tr><td>Sessions or one-off plans?</td><td>A chat per plan, or ongoing threads with friends</td><td>Ongoing threads with friends</td></tr><tr><td>Offers and bookings</td><td>Show partner offers, or stay neutral at first</td><td>Neutral at first; offers clearly marked later</td></tr><tr><td>A browse feed?</td><td>Only conversation, or a small feed of ideas</td><td>A small weekly set, never endless</td></tr><tr><td>Step 0</td><td>Taste seed questions, or learn from the first plan</td><td>A 60 second taste seed</td></tr><tr><td>Build order</td><td>Algorithms first, or app shell and supply first</td><td>Supply and facts first, then algorithms</td></tr><tr><td>Privacy</td><td>How much of the notebook is visible and editable</td><td>All of it</td></tr><tr><td>Budget</td><td>Cost per reply we accept</td><td>Measure in the first 50 people</td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Glossary</p>
+    <div class="tbl"><table><thead><tr><th>Word</th><th>Meaning</th></tr></thead><tbody><tr><td>Fence</td><td>A rule that must be true, yes or no</td></tr><tr><td>Magnet</td><td>Something they’d like; it ranks, never rules out</td></tr><tr><td>Notebook</td><td>What the cousin knows about one person</td></tr><tr><td>Card</td><td>The summary of one conversation: who, what, rules, tastes</td></tr><tr><td>Safe / stretch / wild</td><td>The three kinds of idea in a list</td></tr><tr><td>Rest period</td><td>A fading penalty after a visit</td></tr><tr><td>Pin</td><td>A place asked for by name; beats any rule except fences</td></tr><tr><td>Arc</td><td>The shape of an evening: easy start, main thing, gentle end</td></tr><tr><td>Verdict</td><td>Serve, substitute, ask, can’t, won’t or not ours</td></tr><tr><td>Bandit</td><td>A method that learns by trying (Thompson sampling)</td></tr><tr><td>Embedding</td><td>Numbers that capture what a place feels like</td></tr><tr><td>Live test</td><td>Half see A, half see B; compare what happened</td></tr></tbody></table></div>
+  </section>
+</Base>

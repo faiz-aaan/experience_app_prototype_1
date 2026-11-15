@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import Status from '../../components/Status.astro';
+import Film from '../../components/Film.astro';
+import { url } from '../../data/url';
+---
+<Base slug="launch/" title="A day at launch" description="The running example, live: what one person sees from Thursday’s nudge to Sunday’s recap.">
+  <header class="wrap phead">
+    <p class="chapter">11 · At launch</p>
+    <h1 class="h1" data-split="lines" data-intro>Thursday to Sunday, with one sentence in the middle.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">This is the running example as it would happen after launch. Every step uses only what is on the earlier pages.</p>
+      <Status s="designed" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-launch" name="launch" title="Film · A weekend at launch" length="19 s" label="Animated timeline: Thursday nudge, Saturday ask and plan, friends join, re-check before leaving, Sunday recap and notebook update" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">What happens behind it</p>
+    <div class="tbl"><table><thead><tr><th>When</th><th>You see</th><th>Behind it</th></tr></thead><tbody><tr><td>Thu 6:40 pm</td><td>A nudge with three ideas</td><td>Notebook + weekend weather + events near you</td></tr><tr><td>Sat 5:10 pm</td><td>You type one sentence</td><td>AI cuts it into pieces; nothing to ask</td></tr><tr><td>Sat 5:10 pm</td><td>A plan in about a second</td><td>Fences, magnets, mix, route, facts by code</td></tr><tr><td>Sat 5:14 pm</td><td>3 friends say yes</td><td>Plan pinned on everyone’s map</td></tr><tr><td>Sat 7:05 pm</td><td>“Still open, leave by 7:15”</td><td>Hours and traffic checked again</td></tr><tr><td>Sun 10:00 am</td><td>“How was it?”</td><td>Answer becomes a tentative note in the notebook</td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">First 50 people</p>
+    <div class="prose"><p>At launch the cousin works for one city area and a few kinds of outing: food, dessert, walks, clubs and small events. Our own facts (veg confirmed, cost bands) are gathered by hand for the first few hundred places. Every outcome is logged so the <a href={url('models/')}>model ladder</a> can start.</p></div>
+  </section>
+</Base>

@@ -1,0 +1,39 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Status from '../../../components/Status.astro';
+import Film from '../../../components/Film.astro';
+import { url } from '../../../data/url';
+---
+<Base slug="algorithms/rest-period/" title="Rest period" description="Why a place you loved rests for a while before The Cousin suggests it again, and why clubs work the other way.">
+  <header class="wrap phead">
+    <p class="chapter">04 · The algorithms · Stage 3</p>
+    <h1 class="h1" data-split="lines" data-intro>A place you loved should rest before it comes back.</h1>
+    <div class="headrow" data-reveal="up" data-intro data-delay="0.3">
+      <p class="lede muted">Without a rest, the place you loved last Friday wins every Friday. Good at first, boring by the third week.</p>
+      <Status s="tested" />
+    </div>
+  </header>
+  <section class="wrap row">
+    <p class="chapter">In plain words</p>
+    <div class="prose"><p>Every place you visit gets a small penalty that fades over time. The more you loved it, the sooner it returns. Places you disliked never come back. Clubs and communities are the opposite: going back is the point, so a club you liked gets a small bonus instead. And you can always ask for a place by name; that’s a pin, and a pin beats any rest.</p></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Film id="film-rest" name="rest" title="Film · Rest period" length="14 s" label="Animated film: fading penalty curves; loved places return after about a month, liked places after about two, clubs get a bonus, and a pin overrides the rest" />
+  </section>
+  <section class="wrap row">
+    <p class="chapter">On the example</p>
+    <div class="tbl"><table><thead><tr><th>You said after</th><th>Rest</th><th>Comes back</th></tr></thead><tbody><tr><td>Loved it</td><td>Short</td><td>About a month</td></tr><tr><td>It was fine</td><td>Longer</td><td>About two months</td></tr><tr><td>Not for me</td><td>Forever</td><td>Never</td></tr><tr><td>A club you liked</td><td>None: a bonus</td><td>Next time it meets</td></tr><tr><td>“Take me back to Kaveri”</td><td>Ignored: a pin</td><td>Tonight</td></tr></tbody></table></div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">For engineers</p>
+    <details class="eng">
+      <summary>The decay</summary>
+      <div class="prose">
+        <pre class="code">rest(x) = R · exp(−days_since / τ)      τ = 30 (loved), 60 (liked), ∞ (disliked)
+club(x) = +B if liked, no decay</pre>
+        <p>τ is the time it takes the penalty to fall to about a third. Both values are guesses tested in simulation; the models stage learns them per person.</p>
+      </div>
+    </details>
+  </section>
+</Base>

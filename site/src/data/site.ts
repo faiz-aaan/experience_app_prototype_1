@@ -17,29 +17,30 @@ export const statusLabel: Record<Status, string> = {
 
 export type Section = { slug: string; n: string; title: string; short: string; group?: string; built: boolean };
 
-// The 13 sections in reading order. `built: false` shows in the menu as "next".
+// The 13 sections (plus the outside-services page) in reading order. `built: true` shows in the menu as "next".
 export const sections: Section[] = [
   { slug: '', n: '01', title: 'The product in one minute', short: 'The product', built: true },
   { slug: 'goals/', n: '02', title: 'Goals, non-goals and success', short: 'Goals', built: true },
   { slug: 'how-it-works/', n: '03', title: 'How it works: five stages', short: 'How it works', built: true },
+  { slug: 'outside/', n: '03', title: 'What we rely on outside', short: 'Outside services', built: true },
   { slug: 'algorithms/fences-and-magnets/', n: '04', title: 'Fences and magnets', short: 'Fences and magnets', group: 'The algorithms', built: true },
-  { slug: 'algorithms/mix-and-variety/', n: '04', title: 'Safe, stretch, wild and variety', short: 'Mix and variety', group: 'The algorithms', built: false },
-  { slug: 'algorithms/route-and-arc/', n: '04', title: 'Route puzzle and evening arc', short: 'Route and arc', group: 'The algorithms', built: false },
-  { slug: 'algorithms/rest-period/', n: '04', title: 'Rest period', short: 'Rest period', group: 'The algorithms', built: false },
-  { slug: 'algorithms/memory/', n: '04', title: 'Memory and changing taste', short: 'Memory', group: 'The algorithms', built: false },
-  { slug: 'algorithms/asking/', n: '04', title: 'When to ask a question', short: 'Asking', group: 'The algorithms', built: false },
-  { slug: 'algorithms/saying-no/', n: '04', title: 'Saying no', short: 'Saying no', group: 'The algorithms', built: false },
-  { slug: 'algorithms/wild-cards/', n: '04', title: 'Wild cards that learn', short: 'Wild cards', group: 'The algorithms', built: false },
-  { slug: 'algorithms/facts/', n: '04', title: 'Facts by code', short: 'Facts', group: 'The algorithms', built: false },
-  { slug: 'all-together/', n: '05', title: 'All together: one evening', short: 'All together', built: false },
-  { slug: 'habit/', n: '06', title: 'A habit, not an addiction', short: 'Psychology', built: false },
-  { slug: 'borrowed/', n: '07', title: 'What we take from others', short: 'Borrowed ideas', built: false },
-  { slug: 'moat/', n: '08', title: 'The moat, communities and events', short: 'Moat', built: false },
-  { slug: 'models/', n: '09', title: 'When data grows: the models', short: 'Models', built: false },
-  { slug: 'tests/', n: '10', title: 'Test runs: rules and models', short: 'Test runs', built: false },
-  { slug: 'launch/', n: '11', title: 'A day at launch', short: 'At launch', built: false },
-  { slug: 'risks/', n: '12', title: 'Risks and how we tackle them', short: 'Risks', built: false },
-  { slug: 'decisions/', n: '13', title: 'Open decisions and glossary', short: 'Decisions', built: false },
+  { slug: 'algorithms/mix-and-variety/', n: '04', title: 'Safe, stretch, wild and variety', short: 'Mix and variety', group: 'The algorithms', built: true },
+  { slug: 'algorithms/route-and-arc/', n: '04', title: 'Route puzzle and evening arc', short: 'Route and arc', group: 'The algorithms', built: true },
+  { slug: 'algorithms/rest-period/', n: '04', title: 'Rest period', short: 'Rest period', group: 'The algorithms', built: true },
+  { slug: 'algorithms/memory/', n: '04', title: 'Memory and changing taste', short: 'Memory', group: 'The algorithms', built: true },
+  { slug: 'algorithms/asking/', n: '04', title: 'When to ask a question', short: 'Asking', group: 'The algorithms', built: true },
+  { slug: 'algorithms/saying-no/', n: '04', title: 'Saying no', short: 'Saying no', group: 'The algorithms', built: true },
+  { slug: 'algorithms/wild-cards/', n: '04', title: 'Wild cards that learn', short: 'Wild cards', group: 'The algorithms', built: true },
+  { slug: 'algorithms/facts/', n: '04', title: 'Facts by code', short: 'Facts', group: 'The algorithms', built: true },
+  { slug: 'all-together/', n: '05', title: 'All together: one evening', short: 'All together', built: true },
+  { slug: 'habit/', n: '06', title: 'A habit, not an addiction', short: 'Psychology', built: true },
+  { slug: 'borrowed/', n: '07', title: 'What we take from others', short: 'Borrowed ideas', built: true },
+  { slug: 'moat/', n: '08', title: 'The moat, communities and events', short: 'Moat', built: true },
+  { slug: 'models/', n: '09', title: 'When data grows: the models', short: 'Models', built: true },
+  { slug: 'tests/', n: '10', title: 'Test runs: rules and models', short: 'Test runs', built: true },
+  { slug: 'launch/', n: '11', title: 'A day at launch', short: 'At launch', built: true },
+  { slug: 'risks/', n: '12', title: 'Risks and how we tackle them', short: 'Risks', built: true },
+  { slug: 'decisions/', n: '13', title: 'Open decisions and glossary', short: 'Decisions', built: true },
 ];
 
 // The one example threaded through every page.
