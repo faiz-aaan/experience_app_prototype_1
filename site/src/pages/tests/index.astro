@@ -70,7 +70,7 @@ const dr: [string, string][] = [['full', 'Nothing'], ['full+drift', 'Surprise me
     <div class="prose">
       <p><b>The cousin beats a popular list by a lot.</b> First pick accepted rises from {pc(clean.res.popular.all.first)} to {pc(clean.res.full.all.first)} in the clean world, and from {pc(messy.res.popular.all.first)} to {pc(messy.res.full.all.first)} in the messy one, with rules alone.</p>
       <p><b>Models add a few points, not a leap, and only where tags miss something.</b> In the clean world, where tastes match the tags, every model was within about a point of rules. In the messy world, the small statistics model (logistic regression with a “people like you” signal) won: {pc(messy.res['full+lr'].all.first)}. Bigger models scored better on paper but not live. That’s why each model must win a live test before it replaces a rule (see <a href={url('models/')}>models</a>).</p>
-      <p><b>There is room above.</b> The cheating design that can read people’s hidden tastes reaches {pc(clean.res.oracle.all.first)}. Most of that gap is knowing the person better, which comes from outcomes and catch-ups, not bigger models.</p>
+      <p><b>There is room above.</b> The cheating design that can read people’s hidden tastes reaches {pc(clean.res.oracle.all.first)} in the clean world and {pc(messy.res.oracle.all.first)} in the messy one. Most of that gap is knowing the person better, which comes from outcomes and catch-ups, not bigger models.</p>
     </div>
   </section>
 
@@ -102,6 +102,7 @@ const dr: [string, string][] = [['full', 'Nothing'], ['full+drift', 'Surprise me
       <div class="fact"><b>{pc1(agg.listed.acc)}</b><span>right verdict: serve, ask or say no</span></div>
       <div class="fact"><b>{(agg.confirmed.hard_viol * 100).toFixed(1)}%</b><span>diet or allergy needs broken, with confirmed facts</span></div>
     </div>
+    <p class="muted">The code never knowingly breaks a stated limit. The 4.9% comes from wrong data: the test assumed some dish facts are missing or wrong, so a place can say “veg” and not be. Trusting listings as-is broke 12.4%; asking places to confirm brings it to 4.9%. That leftover is why confirmed facts matter more than better ranking.</p>
   </section>
 </Base>
 
