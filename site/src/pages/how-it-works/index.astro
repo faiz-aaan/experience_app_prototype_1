@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Video from '../../components/Video.astro';
 import Status from '../../components/Status.astro';
 import { url } from '../../data/url';
 const stages = [
@@ -21,6 +22,11 @@ const stages = [
     <h1 class="h1" data-split="lines" data-intro>Five stages. Each one makes the list smaller.</h1>
     <p class="lede muted" data-reveal="up" data-intro data-delay="0.3">The expensive steps only ever see a handful of places. That’s how thousands of places, different needs and live routes fit together in about a second.</p>
   </header>
+
+  <section class="wrap row">
+    <p class="chapter">Watch it work</p>
+    <Video v="V02" />
+  </section>
 
   <section class="door kolam" data-kolam aria-label="The five stages, drawn as a kolam as you scroll">
     <div class="kolam__chapters">

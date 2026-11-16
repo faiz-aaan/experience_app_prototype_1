@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Video from '../components/Video.astro';
 import Status from '../components/Status.astro';
 import { example } from '../data/site';
 import { url } from '../data/url';
@@ -61,6 +62,11 @@ const loop = 'M64 330 C 80 240, 118 158, 176 150 C 232 142, 272 192, 250 244 C 2
         <circle r="4" class="you" data-you cx="64" cy="330" />
       </svg>
     </div>
+  </section>
+
+  <section class="wrap row">
+    <p class="chapter">Watch the overview</p>
+    <Video v="V01" title="The product, explained" />
   </section>
 
   <section class="wrap row airy">

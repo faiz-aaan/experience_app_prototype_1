@@ -1,6 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import Film from '../../../components/Film.astro';
+import Video from '../../../components/Video.astro';
 import Status from '../../../components/Status.astro';
 import { url } from '../../../data/url';
 import agg from '../../../data/sim/stress_agg.json';
@@ -32,7 +32,7 @@ const p1 = (v: number) => `${(v * 100).toFixed(1)}%`;
 
   <section class="wrap row">
     <p class="chapter">Watch it work</p>
-    <Film id="film-fences" name="fences" title="Film · Fences, then magnets" length="22 s" label="Animated film: about 150 dinner places shown as dots; five fences knock most of them out; the survivors are ranked by magnets and the top six move on" />
+    <Video v="V03" />
   </section>
 
   <section class="wrap row">

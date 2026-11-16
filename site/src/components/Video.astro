@@ -1,0 +1,27 @@
+---
+// Narrated explainer video: poster first, nothing downloads until play. Chapters seek; the transcript is the full narration.
+import videos from '../data/videos.json';
+import { url } from '../data/url';
+interface Props { v: keyof typeof videos; title?: string }
+const { v, title } = Astro.props;
+const meta = videos[v];
+const mmss = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+const name = title ?? meta.title;
+---
+<figure class="vid" data-vid>
+  <div class="vid__head"><span>Video · {name}</span><span>{mmss(meta.dur)} · with sound</span></div>
+  <div class="vid__frame">
+    <video src={url(`videos/${v}.mp4`)} poster={url(`videos/${v}.jpg`)} preload="none" playsinline controls width="1920" height="1080" aria-label={`Explainer video: ${name}. The narration is in the transcript below.`}></video>
+    <button class="vid__start" type="button" data-vid-start aria-label={`Play video: ${name}`}>
+      <span class="vid__btn"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4 L16 10 L6 16 Z" /></svg>Play</span>
+      <span class="vid__len">{mmss(meta.dur)}</span>
+    </button>
+  </div>
+  <div class="vid__chapters" aria-label="Chapters">
+    {meta.paras.map((p) => <button type="button" data-seek={p.t}><b>{mmss(p.t)}</b>{p.title}</button>)}
+  </div>
+  <details class="vid__tx">
+    <summary>Read the narration</summary>
+    <div>{meta.paras.map((p) => <p><b>{p.title}.</b> {p.text}</p>)}</div>
+  </details>
+</figure>
