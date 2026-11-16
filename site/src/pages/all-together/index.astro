@@ -22,6 +22,19 @@ import { url } from '../../data/url';
     <Film id="film-together" name="together" title="Film · One conversation, five messages" length="23 s" label="Animated film: five chat messages; the card updates; a strip of seven stages shows which run, which are reused and which are skipped for each message" />
   </section>
   <section class="wrap row">
+    <p class="chapter">Asking for more</p>
+    <div class="prose">
+      <p>One more kind of follow-up: “show me more”. Nothing on the card changes, so the search, the fences and the ranking are all reused. Only the <a href={url('algorithms/mix-and-variety/')}>mix</a> runs again, leaving out the three already shown, and the facts are printed fresh for the new picks. “Give me 10 options” works the same way and returns a short list instead of three. Both are quick, because the search and the ranking are skipped.</p>
+    </div>
+    <div class="tbl" tabindex="0"><table><thead><tr><th>Message</th><th>Card</th><th>Runs again</th></tr></thead><tbody>
+      <tr><td>“Make it somewhere livelier”</td><td>Taste changes</td><td>Ranking onwards</td></tr>
+      <tr><td>“Is the thali place open late?”</td><td>No change</td><td>Nothing; the fact is already fetched</td></tr>
+      <tr><td>“Show me more”</td><td>No change</td><td>Mix, route and facts, on the same shortlist</td></tr>
+      <tr><td>“Give me 10 options”</td><td>Count becomes 10</td><td>Mix in list mode, then facts</td></tr>
+      <tr><td>“Scrap it. We’re 10 now”</td><td>Group and area change</td><td>Everything, after one question</td></tr>
+    </tbody></table></div>
+  </section>
+  <section class="wrap row">
     <p class="chapter">Every algorithm, in order</p>
     <div class="tbl" tabindex="0"><table><thead><tr><th>Step</th><th>Algorithm</th><th>On the example</th></tr></thead><tbody><tr><td>1</td><td>Understand (AI)</td><td>Two things to find, four rules, one taste</td></tr><tr><td>2</td><td><a href={url('algorithms/saying-no/')}>Saying no</a></td><td>Everything is allowed: serve</td></tr><tr><td>3</td><td><a href={url('algorithms/asking/')}>Asking</a></td><td>Budget filled from notebook; no question</td></tr><tr><td>4</td><td><a href={url('algorithms/fences-and-magnets/')}>Fences</a></td><td>3,000 places → about 40</td></tr><tr><td>5</td><td>Magnets, <a href={url('algorithms/memory/')}>memory</a>, <a href={url('algorithms/rest-period/')}>rest</a></td><td>40 ranked; last Friday’s place rests</td></tr><tr><td>6</td><td><a href={url('algorithms/mix-and-variety/')}>Mix</a>, <a href={url('algorithms/wild-cards/')}>wild cards</a></td><td>6 dinners + 6 desserts, varied</td></tr><tr><td>7</td><td><a href={url('algorithms/route-and-arc/')}>Route and arc</a></td><td>Kaveri 7:30 → Malli 9:05 → home 9:40</td></tr><tr><td>8</td><td><a href={url('algorithms/facts/')}>Facts by code</a></td><td>Card printed from data; AI writes reasons</td></tr><tr><td>9</td><td>Learn</td><td>Tomorrow: “How was it?” updates the notebook</td></tr></tbody></table></div>
   </section>
