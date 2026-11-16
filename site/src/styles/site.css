@@ -38,7 +38,7 @@
 /* Letter roll: the inner label slides up, a copy follows. Primary nav and buttons. */
 .roll { position: relative; display: inline-block; overflow: hidden; vertical-align: top; }
 .roll > span, .roll::after { display: inline-block; transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1); }
-.roll::after { content: attr(data-t) / ""; position: absolute; left: 0; top: 0; white-space: nowrap; transform: translateY(105%); }
+.roll::after { content: attr(data-t) / ""; position: absolute; left: 0; right: 0; top: 0; white-space: inherit; transform: translateY(105%); }
 a:hover .roll > span, button:hover .roll > span { transform: translateY(-105%); }
 a:hover .roll::after, button:hover .roll::after { transform: translateY(0); }
 .index a:not([aria-current]):hover { background: rgb(11 11 11 / 0.05); }

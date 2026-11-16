@@ -46,7 +46,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: ful
     <a class="skip-link" href="#main">Skip to content</a>
     <div id="curtain" transition:persist="curtain" aria-hidden="true"><div class="curtain__panel"></div><div class="curtain__line"></div></div>
     <div class="shell">
-      <aside class="rail" aria-label="Sections">
+      <aside class="rail" aria-label="Sections" data-lenis-prevent>
         <Brand />
         <nav aria-label="Sections"><Index current={slug} /></nav>
         <p class="meta">Product requirements<br />Updated {site.updated}</p>
@@ -56,7 +56,7 @@ const jsonLd = { '@context': 'https://schema.org', '@type': 'WebPage', name: ful
           <Brand />
           <button class="menu-btn" type="button" aria-expanded="false" aria-controls="overlay" data-menu-open>Menu</button>
         </header>
-        <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Sections">
+        <div class="overlay" id="overlay" data-lenis-prevent role="dialog" aria-modal="true" aria-label="Sections">
           <div class="top"><Brand /><button class="menu-btn" type="button" data-menu-close>Close</button></div>
           <nav aria-label="Sections (menu)"><Index current={slug} /></nav>
         </div>
