@@ -182,3 +182,6 @@ details.eng .prose { margin-top: 0.8rem; font-size: 0.97rem; }
 .vid__tx summary:hover { color: var(--c-rice); }
 .vid__tx div { display: grid; gap: 0.6rem; max-width: 70ch; padding-top: 0.5rem; color: var(--c-door-muted); }
 .vid__tx b { color: var(--c-rice); }
+
+/* A video row uses the full width: its label sits above it instead of leaving an empty left column. */
+@media (min-width: 900px) { .row:has(> .vid) { grid-template-columns: minmax(0, 1fr); gap: calc(var(--u) * 1.5); } .row:has(> .vid) > :not(:first-child) { grid-column: 1; } }

@@ -9,7 +9,7 @@ const mmss = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).
 const name = title ?? meta.title;
 ---
 <figure class="vid" data-vid>
-  <div class="vid__head"><span>Video · {name}</span><span>{mmss(meta.dur)} · with sound</span></div>
+  <div class="vid__head"><span>Video · {name}</span><span>With sound</span></div>
   <div class="vid__frame">
     <video src={url(`videos/${v}.mp4`)} poster={url(`videos/${v}.jpg`)} preload="none" playsinline controls width="1920" height="1080" aria-label={`Explainer video: ${name}. The narration is in the transcript below.`}></video>
     <button class="vid__start" type="button" data-vid-start aria-label={`Play video: ${name}`}>
