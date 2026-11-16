@@ -85,7 +85,9 @@ const loop = 'M64 330 C 80 240, 118 158, 176 150 C 232 142, 272 192, 250 244 C 2
         <p class="muted small">The cousin replies</p>
         <p><b>Kaveri thali place</b>, 7:30 pm. About ₹420 each, 12 min away, veg menu confirmed.</p>
         <p><b>Malli dessert corner</b>, 9:05 pm. On your way home, about ₹90 each.</p>
-        <p class="muted">Home by 9:40 pm. Want somewhere livelier instead?</p>
+        <p>Home by 9:40 pm.</p>
+        <p class="muted">Or a little newer: a Gujarati thali house. Or a surprise: a rooftop millet café.</p>
+        <p class="muted">Want somewhere livelier instead?</p>
       </div>
       <div class="pieces" aria-label="How the request is understood">
         {example.pieces.map((p) => <span class={`piece ${p.kind}`}><b>{p.kind === 'find' ? 'FIND' : p.kind === 'fence' ? 'MUST' : 'LIKES'}</b>{p.text}</span>)}

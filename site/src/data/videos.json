@@ -1,60 +1,60 @@
 {
  "V01": {
   "title": "The product in one minute",
-  "dur": 97.6,
+  "dur": 103.6,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
     "title": "One line is enough",
     "text": "Someone types: I'm bored. Most apps ask what you want. This one starts from who you are, and what tonight is like."
    },
    {
-    "t": 7.7,
+    "t": 10.7,
     "title": "A search box or a cousin?",
     "text": "Planning a night out? A search box needs you to know what you want, then you pick from a long list. Or you could ask an older cousin, who already knows you. She says: you like calm, so try the quiet thali place."
    },
    {
-    "t": 19.9,
+    "t": 22.9,
     "title": "Or say it exactly",
-    "text": "Veg dinner for [four|4] tonight, under [five hundred rupees|₹500] each. Something sweet on the way home. Back by [ten|10]. The app splits it into what to find, what must hold, and what you like."
+    "text": "Veg dinner for 4 tonight, under ₹500 each. Something sweet on the way home. Back by 10. The app splits it into what to find, what must hold, and what you like."
    },
    {
-    "t": 30.9,
+    "t": 33.9,
     "title": "Ideas go out from home",
     "text": "Now the city. Three ideas go out from Home."
    },
    {
-    "t": 34.0,
+    "t": 37.1,
     "title": "Every idea is checked",
-    "text": "The rooftop grill is [fourteen hundred rupees|₹1,400] each. Over budget. The beach shack has no veg menu. Every idea is checked against what you said must hold."
+    "text": "The rooftop grill is ₹1,400 each. Over budget. The beach shack has no veg menu. Every idea is checked against what you said must hold."
    },
    {
-    "t": 43.5,
+    "t": 46.5,
     "title": "One becomes the route",
-    "text": "Kaveri thali place passes. Dinner at [seven thirty|7:30], then dessert at Malli at [nine oh five|9:05]. Leave at [seven fifteen|7:15]. Back by [nine forty|9:40]."
+    "text": "Kaveri thali place passes. Dinner at 7:30, then dessert at Malli at 9:05. Leave at 7:15. Back by 9:40."
    },
    {
-    "t": 53.0,
+    "t": 56.0,
     "title": "A reply, not a list",
     "text": "It comes back like a message from a friend. Where to eat, what it costs, and when you are home. It ends by offering a change."
    },
    {
-    "t": 60.7,
+    "t": 63.7,
     "title": "Different from the apps you know",
     "text": "Google Maps answers a search. It waits until you know. Booking apps sell a table once you have decided. The Cousin starts before the search."
    },
    {
-    "t": 69.1,
+    "t": 72.1,
     "title": "Early numbers",
-    "text": "In a simulation with [fifty|50] synthetic people, the full design had [seventy one percent|71%] of first replies accepted. A simple nearest open place app had [forty percent|40%]. No product code exists yet. Real friends have to confirm these numbers."
+    "text": "In a simulation with 50 synthetic people, the full design had 71% of first replies accepted. A simple nearest open place app had 40%. No product code exists yet. Real friends have to confirm these numbers."
    },
    {
-    "t": 84.5,
+    "t": 87.6,
     "title": "Why it is built this way",
     "text": "The AI is the voice, not the brain. The AI listens and explains. Code chooses, checks and remembers."
    },
    {
-    "t": 92.2,
+    "t": 95.2,
     "title": "Takeaway",
     "text": "A cousin who knows you, knows the city, and always has a good idea."
    }
@@ -62,50 +62,50 @@
  },
  "V02": {
   "title": "How it works: five stages",
-  "dur": 89.0,
+  "dur": 95.0,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "One sentence, five stages",
     "text": "One sentence goes through five stages. Each stage makes the list of places smaller, so the slow, costly steps only see a handful."
    },
    {
-    "t": 9.4,
+    "t": 12.4,
     "title": "Planning a dinner for friends",
     "text": "Say you plan a friends' dinner yourself. First, work out what they asked for. Cross off places that can't work. Pick favourites from the rest. Fit the evening together, in order. Then phone to check they're open."
    },
    {
-    "t": 22.2,
+    "t": 25.3,
     "title": "Understand",
     "text": "Stage one: understand. The AI cuts the sentence into pieces, and gives each a type. Two things to find. Four rules. One taste."
    },
    {
-    "t": 31.6,
+    "t": 34.7,
     "title": "Narrow",
-    "text": "Stage two: narrow. About [three thousand|3,000] places near you. The rules apply one by one. Veg. Open. Seats [four|4]. Fits the budget. Leaves time to get home. About [forty|40] are left."
+    "text": "Stage two: narrow. About 3,000 places near you. The rules apply one by one. Veg. Open. Seats 4. Fits the budget. Leaves time to get home. About 40 are left."
    },
    {
-    "t": 44.5,
+    "t": 47.5,
     "title": "Rank",
-    "text": "Stage three: rank. Each of the [forty|40] is scored on long-term taste from the notebook, plus tonight. The best six dinner places and six dessert stops go forward."
+    "text": "Stage three: rank. Each of the 40 is scored on long-term taste from the notebook, plus tonight. The best six dinner places and six dessert stops go forward."
    },
    {
-    "t": 55.2,
+    "t": 58.2,
     "title": "Combine",
-    "text": "Stage four: combine. Google gives the travel times between those [twelve|12] places and home. A route solver keeps the best pair that gets you home before [ten|10]."
+    "text": "Stage four: combine. Google gives the travel times between those 12 places and home. A route solver keeps the best pair that gets you home before 10."
    },
    {
-    "t": 65.3,
+    "t": 68.3,
     "title": "Check",
     "text": "Stage five: check. Every rule is checked again, on fresh data. Then code prints each name, price and time. The AI only writes the reasons."
    },
    {
-    "t": 75.2,
+    "t": 78.2,
     "title": "Why the Cousin does it this way",
-    "text": "So the slow steps only ever see [twelve|12] places, not [three thousand|3,000]. The AI listens. Code chooses and checks. All of it takes about a second."
+    "text": "So the slow steps only ever see 12 places, not 3,000. The AI listens. Code chooses and checks. All of it takes about a second."
    },
    {
-    "t": 84.7,
+    "t": 87.7,
     "title": "Takeaway",
     "text": "Five stages. Each one makes the list smaller."
    }
@@ -113,50 +113,50 @@
  },
  "V03": {
   "title": "Fences, then magnets",
-  "dur": 78.9,
+  "dur": 85.0,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "Must-haves and nice-to-haves",
-    "text": "Some things are [must haves|must-haves]: yes or no. Others are [nice to haves|nice-to-haves]: they get a score. We call the rules fences, and the scores magnets."
+    "text": "Some things are must-haves: yes or no. Others are nice-to-haves: they get a score. We call the rules fences, and the scores magnets."
    },
    {
-    "t": 9.3,
+    "t": 12.3,
     "title": "Choosing a flat to rent",
-    "text": "Renting a flat? The fences: pets allowed, under [twenty five thousand rupees|₹25,000] a month, within [thirty minutes|30 minutes] of work. Fail one, and it's out."
+    "text": "Renting a flat? The fences: pets allowed, under ₹25,000 a month, within 30 minutes of work. Fail one, and it's out."
    },
    {
-    "t": 18.9,
+    "t": 21.9,
     "title": "Magnets rank the rest",
     "text": "Magnets rank the rest, by sunlight and a nice balcony. The gorgeous one doesn't allow pets, so it stays out."
    },
    {
-    "t": 26.4,
+    "t": 29.4,
     "title": "In the app: veg dinner for 4",
-    "text": "Veg dinner for [four|4], under [five hundred rupees|₹500] each, home by [ten|10]. [A hundred and fifty|150] places could serve dinner. Fences first. Fail one, and the place is out, however good it is. Vegetarian. Under [five hundred rupees|₹500], from our own cost bands. Seats [four|4]. Open at [seven thirty|7:30]. Home by [ten|10]."
+    "text": "Veg dinner for 4, under ₹500 each, home by 10. 150 places could serve dinner. Fences first. Fail one, and the place is out, however good it is. Vegetarian. Under ₹500, from our own cost bands. Seats 4. Open at 7:30. Home by 10."
    },
    {
-    "t": 47.0,
+    "t": 50.0,
     "title": "Magnets score what is left",
     "text": "Magnets next. The thirty left are scored for this person tonight."
    },
    {
-    "t": 51.7,
+    "t": 54.8,
     "title": "The top six go forward",
     "text": "The top six move on to the next stage."
    },
    {
-    "t": 55.3,
+    "t": 58.3,
     "title": "No way back through scoring",
     "text": "This place isn't veg, but its taste score is very high. It tries to come back, and bounces off. Nothing that broke a fence can ever come back through scoring."
    },
    {
-    "t": 65.2,
+    "t": 68.2,
     "title": "Why the Cousin works in this order",
-    "text": "So in the Cousin, a rule is never traded for taste. And the expensive steps only see six dinner places, not [a hundred and fifty|150]."
+    "text": "So in the Cousin, a rule is never traded for taste. And the expensive steps only see six dinner places, not 150."
    },
    {
-    "t": 74.0,
+    "t": 77.1,
     "title": "Takeaway",
     "text": "Fences remove. Magnets rank. They never mix."
    }
@@ -164,65 +164,65 @@
  },
  "V04": {
   "title": "Safe, stretch, wild",
-  "dur": 94.9,
+  "dur": 101.0,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
     "title": "Three ideas, not one idea three times",
     "text": "Pick the three best scores, and you can get three near-copies. A better reply is one sure thing, one a little new, one surprise."
    },
    {
-    "t": 8.5,
+    "t": 11.5,
     "title": "Planning a Sunday for a friend",
     "text": "A friend visits on Sunday. Your top three ideas are all beach walks. Better: a beach walk, a new cafe, and a pottery class they would love."
    },
    {
-    "t": 17.6,
+    "t": 20.6,
     "title": "In the app: every idea is a circle",
     "text": "Every place that passed the fences is a circle. Alike places sit close. Bigger means a better match tonight."
    },
    {
-    "t": 24.7,
+    "t": 27.8,
     "title": "Plain ranking takes the three biggest",
     "text": "Plain ranking takes the three biggest. Zoom in: all dosa or thali places. The same evening, three times."
    },
    {
-    "t": 32.2,
+    "t": 35.2,
     "title": "The mix starts with a safe bet",
     "text": "The mix picks a safe bet first: the best match. Everything similar to it shrinks, since being like a pick already made is less useful."
    },
    {
-    "t": 40.7,
+    "t": 43.8,
     "title": "Then a stretch, then a wild card",
     "text": "Next, a stretch: still a strong match, a little newer. Then a wild card: new to them, but still fitting their taste. A random far-off pick is rejected. Random is never allowed."
    },
    {
-    "t": 51.9,
+    "t": 54.9,
     "title": "Three different evenings",
     "text": "Safe, stretch, wild."
    },
    {
-    "t": 54.7,
+    "t": 57.7,
     "title": "Ask for more, and the mix runs again",
-    "text": "Three is the default, not the limit. Say show me more. The mix runs again on the same shortlist of about [forty|40] places. Every rule still applies."
+    "text": "Three is the default, not the limit. Say show me more. The mix runs again on the same shortlist of about 40 places. Every rule still applies."
    },
    {
-    "t": 64.1,
+    "t": 67.1,
     "title": "Or ask for ten",
-    "text": "Say give me [ten|10] options: a short list, best first, but spread out. Code fills in each row's facts."
+    "text": "Say give me 10 options: a short list, best first, but spread out. Code fills in each row's facts."
    },
    {
-    "t": 71.0,
+    "t": 74.0,
     "title": "When nothing is left",
-    "text": "Any others, with nothing left? The fence stays put. That's all that fits. Raise the budget to [six hundred rupees|₹600] and there are four more. The fences never loosen on their own."
+    "text": "Any others, with nothing left? The fence stays put. That's all that fits. Raise the budget to ₹600 and there are four more. The fences never loosen on their own."
    },
    {
-    "t": 82.4,
+    "t": 85.4,
     "title": "Why the Cousin mixes",
-    "text": "So you never get one idea three times. A list stops at about [ten|10]. Past that, it asks what to change."
+    "text": "So you never get one idea three times. A list stops at about 10. Past that, it asks what to change."
    },
    {
-    "t": 89.4,
+    "t": 92.4,
     "title": "Takeaway",
     "text": "Three good ideas, not the same idea three times. Ask, and there are more."
    }
@@ -230,60 +230,60 @@
  },
  "V05": {
   "title": "The route puzzle and evening arc",
-  "dur": 76.6,
+  "dur": 83.4,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "The best pair, not the two best",
     "text": "The best dinner and the best dessert may not work together. So we pick the best pair, not the two best."
    },
    {
-    "t": 7.3,
+    "t": 10.4,
     "title": "Lunch, then a film, home by 5",
-    "text": "Say you want lunch, then a film, and be home by [five|5]. Your favourite lunch and favourite film are far apart, so that pair gets you home late. The best pair that fits has a different lunch."
+    "text": "Say you want lunch, then a film, and be home by 5. Your favourite lunch and favourite film are far apart, so that pair gets you home late. The best pair that fits has a different lunch."
    },
    {
-    "t": 18.8,
+    "t": 21.8,
     "title": "In the app: the stops",
-    "text": "Tonight: [three|3] dinner places and [three|3] dessert stops, each with a score."
+    "text": "Tonight: the three dinner ideas, and the top three dessert stops, each with a score."
    },
    {
-    "t": 24.0,
+    "t": 27.7,
     "title": "Travel times between every pair",
     "text": "One request to Google gives the travel time between every pair. Google can't choose stops. It only measures."
    },
    {
-    "t": 32.0,
+    "t": 35.7,
     "title": "The solver tries every combination",
-    "text": "The solver tries each dinner with each dessert: [nine|9] combinations."
+    "text": "The solver tries each dinner with each dessert: 9 combinations."
    },
    {
-    "t": 37.4,
+    "t": 41.1,
     "title": "Late, or a big detour: out",
     "text": "A plan that gets home late is out. So is a plan where dessert is a big detour. Dessert must be on the way home."
    },
    {
-    "t": 45.1,
+    "t": 48.9,
     "title": "The best total score wins",
     "text": "Among the plans that fit, the best total score wins."
    },
    {
-    "t": 50.0,
+    "t": 53.7,
     "title": "Dessert comes after dinner",
     "text": "Order matters too. Dessert comes after dinner. A plan with the sweet first is marked down."
    },
    {
-    "t": 56.8,
+    "t": 60.5,
     "title": "The plan: dinner, dessert, home",
-    "text": "Dinner at [seven thirty|7:30], dessert at [five past nine|9:05], home by [nine forty|9:40]. That leaves a traffic buffer before [ten|10]."
+    "text": "Dinner at 7:30, dessert at 9:05, home by 9:40. That leaves a traffic buffer before 10."
    },
    {
-    "t": 65.1,
+    "t": 68.8,
     "title": "Why the Cousin works this way",
     "text": "In the Cousin, Google measures and code chooses. The AI only writes the reasons around the plan."
    },
    {
-    "t": 71.9,
+    "t": 75.6,
     "title": "Takeaway",
     "text": "The best evening is a set of stops in the right order."
    }
@@ -291,50 +291,50 @@
  },
  "V06": {
   "title": "Rest period",
-  "dur": 58.8,
+  "dur": 64.8,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "A favourite needs a rest",
     "text": "A favourite is a good pick. The same favourite every week is not."
    },
    {
-    "t": 5.5,
+    "t": 8.5,
     "title": "A song you love, on repeat",
     "text": "Play a song you love all week, and by Friday you are tired of it. Rest it for a few weeks, and it is a joy again."
    },
    {
-    "t": 13.1,
+    "t": 16.1,
     "title": "In the app: the same place again",
-    "text": "You loved Kaveri thali place last Friday. Without a rest, its high score makes it the safe bet again, and again."
+    "text": "You loved Kaveri thali place last Saturday. Without a rest, its high score makes it the safe bet again, and again."
    },
    {
-    "t": 21.2,
+    "t": 24.2,
     "title": "A rest penalty that fades",
     "text": "So every place you visit gets a rest penalty, and it fades over time. A place you loved is back in rotation after about a month."
    },
    {
-    "t": 29.9,
+    "t": 32.9,
     "title": "Loved, liked, disliked",
     "text": "One you only liked rests longer, about two months. One you disliked is never suggested again."
    },
    {
-    "t": 37.0,
+    "t": 40.0,
     "title": "Clubs are the opposite",
     "text": "Going back is the goal, so a club you liked gets a small bonus instead."
    },
    {
-    "t": 42.5,
+    "t": 45.5,
     "title": "You can always override it",
     "text": "Say \"take me back to Kaveri\", and that is a pin. Pins beat the rest."
    },
    {
-    "t": 48.2,
+    "t": 51.2,
     "title": "Why the Cousin works this way",
     "text": "A rest keeps ideas fresh without dropping what you love. And the pin keeps you in charge."
    },
    {
-    "t": 54.3,
+    "t": 57.4,
     "title": "Takeaway",
     "text": "A place you loved should rest before it comes back."
    }
@@ -342,45 +342,45 @@
  },
  "V07": {
   "title": "Memory and changing taste",
-  "dur": 78.5,
+  "dur": 87.2,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "Remember slowly, notice quickly",
     "text": "A good memory forgets slowly. One odd night shouldn't erase what you really like. But when your life changes, it should notice fast."
    },
    {
-    "t": 8.7,
+    "t": 11.7,
     "title": "A friend who always orders coffee",
     "text": "Think of a friend who always orders filter coffee. One Friday she has tea. You don't rewrite what you know about her. But if she says, I've quit coffee, you update at once."
    },
    {
-    "t": 19.6,
+    "t": 22.6,
     "title": "In the app: late nights",
-    "text": "Four weeks in, the notebook is right: this person loves late nights. Then life changes. They start early gym. Nobody tells the app. The notebook line barely moves. Fading is slow on purpose, so one bad night can't erase a real taste."
+    "text": "Take another line in the notebook. Four weeks in, it says this person loves late nights, and their outings prove it. Then life changes. They start early gym. Nobody tells the app. The notebook line barely moves. Fading is slow on purpose, so one bad night can't erase a real taste."
    },
    {
-    "t": 35.3,
+    "t": 41.0,
     "title": "Way 1: listening",
-    "text": "Way one is listening. They mention it in passing: joined a gym, up at [five|5] now. The line is replaced at once."
+    "text": "Way one is listening. They mention it in passing: joined a gym, up at 5 now. The line is replaced at once."
    },
    {
-    "t": 43.3,
+    "t": 48.9,
     "title": "Way 2: a monthly catch-up",
-    "text": "Way two is a monthly catch-up. One [twenty second|20 second] question: still into late nights? In the test, it caught [ninety five percent|95%] of changes."
+    "text": "Way two is a monthly catch-up. One 20 second question: still into late nights? In the test, it caught 95% of changes."
    },
    {
-    "t": 53.1,
+    "t": 58.8,
     "title": "Way 3: a surprise meter",
-    "text": "Way three is a surprise meter. It counts the ideas the person passed on. Alone, it was slow: it caught [thirty one percent|31%] of changes, about [five|5] weeks late."
+    "text": "Way three is a surprise meter. It counts the ideas the person passed on. Alone, it was slow: it caught 31% of changes, about 5 weeks late."
    },
    {
-    "t": 64.4,
+    "t": 70.1,
     "title": "Why the Cousin does it this way",
     "text": "So the notebook fades slowly, to protect a real taste. Listening comes first, and a monthly catch-up checks. The meter only brings the catch-up forward."
    },
    {
-    "t": 74.2,
+    "t": 79.8,
     "title": "Takeaway",
     "text": "Remember slowly. Notice change quickly."
    }
@@ -388,45 +388,45 @@
  },
  "V08": {
   "title": "Wild cards that learn",
-  "dur": 81.9,
+  "dur": 87.9,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "A surprise that learns",
     "text": "A wild card is a surprise: something new that might still suit you. But which kinds of surprise do you actually enjoy? The app finds out by trying, gently."
    },
    {
-    "t": 10.1,
+    "t": 13.1,
     "title": "Which stall to try on Friday?",
-    "text": "Say a food street has three stalls. You know stall A well: you've loved it [six times out of eight|6 times out of 8]. You know B a little, and C not at all. Where do you go? Mostly A. But now and then C, because it might be even better."
+    "text": "Say a food street has three stalls. You know stall A well: you've loved it 6 times out of 8. You know B a little, and C not at all. Where do you go? Mostly A. But now and then C, because it might be even better."
    },
    {
-    "t": 23.4,
+    "t": 26.5,
     "title": "In the app: five kinds of surprise",
     "text": "In the app, there are five kinds of surprise. For each kind, a belief curve shows how much the app thinks you'd enjoy it. At first it knows nothing, so every curve is flat."
    },
    {
-    "t": 34.0,
+    "t": 37.0,
     "title": "One round, step by step",
     "text": "Each round, it draws a random guess from every curve: a small triangle. It tries the kind with the highest guess. Loved it pushes that curve to the right. Not for me pushes it to the left."
    },
    {
-    "t": 45.5,
+    "t": 48.5,
     "title": "Forty rounds, quickly",
-    "text": "Now watch [forty|40] rounds. As evidence piles up, the curves get narrower. That means more certain. Dawn trips keep missing, so they're tried less. But being unsure still earns them an occasional chance."
+    "text": "Now watch 40 rounds. As evidence piles up, the curves get narrower. That means more certain. Dawn trips keep missing, so they're tried less. But being unsure still earns them an occasional chance."
    },
    {
-    "t": 58.9,
+    "t": 61.9,
     "title": "What was true all along",
     "text": "Now the hidden truth for this person, in dashed lines. The curves landed close. It found what works for them without being told."
    },
    {
-    "t": 68.0,
+    "t": 71.0,
     "title": "Why the Cousin does it this way",
     "text": "Always picking the favourite would miss better things. Picking at random would waste evenings. So it tries good bets more often, and still gives unsure ones a chance."
    },
    {
-    "t": 78.1,
+    "t": 81.1,
     "title": "Takeaway",
     "text": "Surprises that learn what you like."
    }
@@ -434,60 +434,60 @@
  },
  "V09": {
   "title": "When to ask a question",
-  "dur": 80.5,
+  "dur": 88.0,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
     "title": "Ask only when it matters",
     "text": "Every question costs the person a moment. So the app asks only when the answer changes the plan. Four outcomes: fill silently, don't ask, guess out loud, ask."
    },
    {
-    "t": 10.4,
+    "t": 13.4,
     "title": "Ordering pizza for friends",
-    "text": "Ordering pizza for friends? You know she loves mushroom, so you just order it. Paper plates or steel? It changes nothing, so you don't ask. Any allergies, with [ten|10] guests? A wrong guess ruins the evening, so you ask."
+    "text": "Ordering pizza for friends? You know she loves mushroom, so you just order it. Paper plates or steel? It changes nothing, so you don't ask. Any allergies, with 10 guests? A wrong guess ruins the evening, so you ask."
    },
    {
-    "t": 24.1,
+    "t": 27.1,
     "title": "In the app: three gates",
     "text": "Each missing detail passes three gates. Do we already know? Would it change the picks? Is a wrong guess costly?"
    },
    {
-    "t": 31.4,
+    "t": 34.5,
     "title": "Budget wasn't said",
-    "text": "Budget wasn't said. The notebook says about [six hundred rupees|₹600], so it fills it in silently."
+    "text": "Say tonight's message left out the budget. The notebook says about ₹600, so it fills it in silently."
    },
    {
-    "t": 37.8,
+    "t": 42.2,
     "title": "Seats for 4?",
-    "text": "Seats for [four|4]? Every place left seats [four|4], so asking changes nothing."
+    "text": "Seats for 4? Every place left seats 4, so asking changes nothing."
    },
    {
-    "t": 43.1,
+    "t": 47.6,
     "title": "Spice level",
     "text": "Spice matters, but a wrong guess is easy to fix. So it guesses out loud: I've assumed medium spice."
    },
    {
-    "t": 50.3,
+    "t": 54.8,
     "title": "Indoor or outdoor?",
     "text": "Indoor or outdoor? Tonight's picks come out the same, so it doesn't ask."
    },
    {
-    "t": 55.3,
+    "t": 59.7,
     "title": "Now imagine: we're 10",
-    "text": "Now imagine: we're [ten|10]. A budget guess changes the picks, and a wrong one spoils a group dinner. So it asks."
+    "text": "Now imagine: we're 10. A budget guess changes the picks, and a wrong one spoils a group dinner. So it asks."
    },
    {
-    "t": 63.5,
+    "t": 67.9,
     "title": "At most one question",
     "text": "The rule: at most one question per reply. The AI only words the question. Code decides whether to ask."
    },
    {
-    "t": 71.2,
+    "t": 75.6,
     "title": "Why the Cousin does it this way",
     "text": "So most gaps are filled quietly. You are asked only when it truly matters."
    },
    {
-    "t": 76.6,
+    "t": 81.1,
     "title": "Takeaway",
     "text": "Ask only when the answer would change the plan."
    }
@@ -495,55 +495,55 @@
  },
  "V10": {
   "title": "Saying no",
-  "dur": 91.6,
+  "dur": 97.7,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
     "title": "One message, many asks",
     "text": "One message can hold several asks. Some are fine. Some are not. A good answer judges each ask on its own."
    },
    {
-    "t": 7.3,
+    "t": 10.3,
     "title": "A friend asks for two favours",
-    "text": "A friend texts: drive me to the airport at [six in the morning|6 am], and sit my exam for me. You don't refuse the whole message. Airport? Yes, happy to. Your exam? No. But I'll help you revise."
+    "text": "A friend texts: drive me to the airport at 6 am, and sit my exam for me. You don't refuse the whole message. Airport? Yes, happy to. Your exam? No. But I'll help you revise."
    },
    {
-    "t": 18.6,
+    "t": 21.6,
     "title": "In the app: one message",
-    "text": "Now the app. Someone writes: biryani at my friend's wedding, then a bike race late at night, back by [five am|5 am]. Give that one combined score, and the three asks blur together. So the Cousin judges each piece separately."
+    "text": "Now the app. Someone writes: biryani at my friend's wedding, then a bike race late at night, back by 5 am. Give that one combined score, and the three asks blur together. So the Cousin judges each piece separately."
    },
    {
-    "t": 31.6,
+    "t": 34.6,
     "title": "Three pieces, six lanes",
     "text": "The message splits into three pieces, and each piece gets its own checks. Every piece ends in one of six lanes. Serve it. Swap in a safer version. Or ask a question. Or say no: can't, won't, or not ours."
    },
    {
-    "t": 44.4,
+    "t": 47.4,
     "title": "Piece one: the wedding biryani",
-    "text": "Piece one: biryani at someone's wedding. Is it safe? Yes. Is it in scope? No. It's a private event. So it lands in not ours. But the wish for [wedding style|wedding-style] biryani is kept."
+    "text": "Piece one: biryani at someone's wedding. Is it safe? Yes. Is it in scope? No. It's a private event. So it lands in not ours. But the wish for wedding-style biryani is kept."
    },
    {
-    "t": 55.4,
+    "t": 58.5,
     "title": "Piece two: the bike race",
     "text": "Piece two: a bike race late at night. Is it safe? No. It's a street race. So it lands in won't. But a safe version comes back: a karting track."
    },
    {
-    "t": 64.9,
+    "t": 67.9,
     "title": "Piece three: back by 5 am",
-    "text": "Piece three: back by [five am|5 am]. Safe? Yes. In scope? Yes. Fits? Yes. So it's served, and the plan is built around it."
+    "text": "Piece three: back by 5 am. Safe? Yes. In scope? Yes. Fits? Yes. So it's served, and the plan is built around it."
    },
    {
-    "t": 73.3,
+    "t": 76.3,
     "title": "The reply goes piece by piece",
-    "text": "A clear no where one is needed, and something real to do instead. [Wedding style|Wedding-style] biryani, karting, and home by [five|5]."
+    "text": "A clear no where one is needed, and something real to do instead. Wedding-style biryani, karting, and home by 5."
    },
    {
-    "t": 81.0,
+    "t": 84.0,
     "title": "Why the Cousin does it this way",
     "text": "One unsafe ask never sinks the rest. Verdicts come from typed checks. Scores only rank what is allowed."
    },
    {
-    "t": 88.2,
+    "t": 91.2,
     "title": "Takeaway",
     "text": "Say no to the piece, not the person."
    }
@@ -551,50 +551,50 @@
  },
  "V11": {
   "title": "Facts by code",
-  "dur": 75.0,
+  "dur": 81.0,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "Reasons and facts",
     "text": "Anything said about a place has two kinds of words. A reason is an opinion: calm, proper thali. A fact can be checked: a price, a distance, the hours."
    },
    {
-    "t": 10.8,
+    "t": 13.8,
     "title": "One wrong fact",
-    "text": "A friend says: go to that thali place, calm and lovely, open till [eleven|11]. You arrive at quarter past [ten|10]. It closed at [ten|10]. An AI can make the same slip, in a lovely sentence. One wrong fact breaks trust for good."
+    "text": "A friend says: go to that thali place, calm and lovely, open till 11. You arrive at quarter past 10. It closed at 10. An AI can make the same slip, in a lovely sentence. One wrong fact breaks trust for good."
    },
    {
-    "t": 25.4,
+    "t": 28.4,
     "title": "In the app: IDs and reasons",
     "text": "In the app, the AI hands back only an ID and a reason. Nothing else. No name, no price, no hours."
    },
    {
-    "t": 32.8,
+    "t": 35.8,
     "title": "Code prints the facts",
     "text": "Code takes that ID to the fact store. It prints the name, the price, the distance and the hours itself."
    },
    {
-    "t": 39.7,
+    "t": 42.7,
     "title": "Only the reason is the AI's",
     "text": "Only the reason line comes from the AI. A wrong opening time can't come from it, because it never writes one."
    },
    {
-    "t": 47.2,
+    "t": 50.2,
     "title": "A checker scans the reason",
-    "text": "One more safeguard. A checker scans the reason for stray numbers or names. Say the AI slipped in: open till [eleven|11]. The checker finds it, and deletes it."
+    "text": "One more safeguard. A checker scans the reason for stray numbers or names. Say the AI slipped in: open till 11. The checker finds it, and deletes it."
    },
    {
-    "t": 58.1,
+    "t": 61.1,
     "title": "The card the person sees",
     "text": "Checked facts from data, and a reason that sounds human."
    },
    {
-    "t": 62.8,
+    "t": 65.8,
     "title": "Why the Cousin does it this way",
     "text": "An AI can't get a fact wrong if it never writes one. And if one slips into a reason, the checker removes it."
    },
    {
-    "t": 70.1,
+    "t": 73.1,
     "title": "Takeaway",
     "text": "Code prints the facts. The AI writes the reasons."
    }
@@ -602,177 +602,217 @@
  },
  "V12": {
   "title": "Who is called, in what order",
-  "dur": 74.3,
+  "dur": 80.4,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
     "title": "Who is called, in what order",
     "text": "For one reply, the Cousin calls a few outside services. Each does one job. Our own code makes every decision."
    },
    {
-    "t": 8.3,
+    "t": 11.3,
     "title": "Planning a day out",
     "text": "Planning a day out, you might ask a friend to put it in words, look up distances on a map, and check your own notes. They give you information. You make the choices."
    },
    {
-    "t": 18.0,
+    "t": 21.0,
     "title": "You ask, the app reads",
     "text": "You send one sentence. The app reads your notebook from our own data."
    },
    {
-    "t": 22.5,
+    "t": 25.5,
     "title": "Claude splits, Google lists",
     "text": "Claude splits the sentence: two things to find, four rules, one taste. Google Places lists dinner and dessert spots. We keep their IDs, not copies. Our data adds the confirmed facts."
    },
    {
-    "t": 34.5,
+    "t": 37.5,
     "title": "Our code decides",
-    "text": "Now our own code decides. Fences and magnets cut [three thousand|3,000] to [twelve|12]. No service is asked to choose. Google Routes measures every trip between those [twelve|12] places and home, in one call."
+    "text": "Now our own code decides. Fences and magnets cut 3,000 to 12. No service is asked to choose. Google Routes measures every trip between those 12 places and home, in one call."
    },
    {
-    "t": 46.5,
+    "t": 49.5,
     "title": "Solve, then explain",
     "text": "The route solver and the checks leave one plan. Claude is called again, only to write the reasons."
    },
    {
-    "t": 52.5,
+    "t": 55.5,
     "title": "The plan comes back",
-    "text": "Google draws the road path and the map pins. The plan reaches you: [seven thirty|7:30], [nine oh five|9:05], home by [nine forty|9:40]."
+    "text": "Google draws the road path and the map pins. The plan reaches you: 7:30, 9:05, home by 9:40."
    },
    {
-    "t": 60.6,
+    "t": 63.6,
     "title": "Why the Cousin does it this way",
     "text": "That is about two AI calls and a handful of Google calls per reply. Everything else is our code, so the decisions stay ours."
    },
    {
-    "t": 69.4,
+    "t": 72.4,
     "title": "Takeaway",
     "text": "Google knows the city. We know the person. Code decides."
    }
   ]
  },
  "V13": {
-  "title": "One conversation, six messages",
-  "dur": 120.4,
+  "title": "The whole machine: every algorithm, one evening",
+  "dur": 228.4,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
+    "title": "Every algorithm, one evening",
+    "text": "Every video so far showed one piece. Here they all work together, on one evening."
+   },
+   {
+    "t": 9.1,
+    "title": "A kitchen on a busy night",
+    "text": "In a busy restaurant kitchen, the order is read, and anything off the menu is turned away. The cooks work in order. The head chef checks every plate before it leaves. Each person does one job, in one order. The Cousin works the same way."
+   },
+   {
+    "t": 23.4,
+    "title": "Stage 1: understand",
+    "text": "Saturday. You and three friends send one message. First, the AI listens, and fills in the card. Two things to find. Four rules: veg, four people, ₹500 each, home by 10. One taste: South Indian, calm. Each piece of the message is checked. All three are fine, so everything is served. Should it ask? The budget was said, and the rest is known. So no question."
+   },
+   {
+    "t": 46.1,
+    "title": "Stage 2: narrow",
+    "text": "Stage two narrows. About 3,000 places are near you. Gather keeps the dinner and dessert places. Then five fences, one by one: veg, open, seats 4, fits the budget, home in time. About 40 are left."
+   },
+   {
+    "t": 60.0,
+    "title": "Stage 3: rank",
+    "text": "Stage three ranks. Magnets score the 40 on taste from the notebook, plus tonight. If you had been somewhere recently, it would be resting, and slide down."
+   },
+   {
+    "t": 69.2,
+    "title": "Stage 3: safe, stretch, wild",
+    "text": "The mix picks a safe bet, a stretch and a wild one. Places too like a pick shrink. The wild one comes from the kinds of surprise you enjoy. Six dinner places and six dessert stops go forward."
+   },
+   {
+    "t": 80.9,
+    "title": "Stage 4: combine",
+    "text": "Stage four combines. Google measures the travel times between the 12 places and home. The solver tries the pairs, drops late plans and detours, and keeps dessert after dinner. The safe plan: Kaveri at 7:30, Malli at 9:05, home by 9:40."
+   },
+   {
+    "t": 97.3,
+    "title": "Stage 5: check",
+    "text": "Stage five checks. The rules are checked again, on fresh data. Code prints the name, price, distance and hours. The AI writes the reasons, and a checker strips any stray fact."
+   },
+   {
+    "t": 108.7,
+    "title": "The reply: three ideas",
+    "text": "The reply: the safe plan in full, a newer idea, and a surprise. About two AI calls in all. Everything else is code."
+   },
+   {
+    "t": 116.5,
+    "title": "Sunday: how was Kaveri?",
+    "text": "Sunday morning, the Cousin asks: how was Kaveri? You say: loved it. That becomes a tentative line in the notebook, and Kaveri starts its rest. The next plan starts a little smarter."
+   },
+   {
+    "t": 127.3,
     "title": "The card keeps track",
-    "text": "People change their minds mid-chat. So the Cousin keeps a card: who, what to find, what must hold, what you like. Each new message changes only part of it."
+    "text": "People change their minds mid-chat. The card has three boxes: what to find, what must hold, and what you like. Each new message changes only part of it."
    },
    {
-    "t": 9.9,
-    "title": "Planning with a friend",
-    "text": "Picture a friend planning a movie night, with a notepad. You say: make it funnier. One line is rewritten. You ask: what time does it start? Nothing is rewritten. You say: scrap it, we're [ten|10] now. A fresh page."
-   },
-   {
-    "t": 22.9,
-    "title": "Seven stages behind the chat",
-    "text": "Behind the chat are seven stages: understand, ask, narrow, rank, combine, check, and explain. Each message can run a stage, reuse it, or skip it."
-   },
-   {
-    "t": 32.9,
+    "t": 137.0,
     "title": "Message 1: a new plan",
-    "text": "Message one: veg dinner for [four|4], with something sweet on the way home. No card yet, so the AI writes one, and every stage runs. The reply: Kaveri at [seven thirty|7:30], Malli at [nine oh five|9:05], home by [nine forty|9:40]."
+    "text": "Message one: veg dinner for 4, with something sweet on the way home. No card yet, so the AI writes one, and every stage runs. The reply: Kaveri at 7:30, Malli at 9:05, home by 9:40."
    },
    {
-    "t": 46.6,
+    "t": 150.8,
     "title": "Message 2: a change of taste",
     "text": "Message two: make it livelier. Only the likes line changes. Search and rules are reused. Ranking and the rest run again."
    },
    {
-    "t": 55.2,
+    "t": 159.4,
     "title": "Message 3: a question",
     "text": "Message three: is the thali place open late? The card doesn't change. The answer is a fact we already fetched, so only explain runs."
    },
    {
-    "t": 64.3,
+    "t": 168.4,
     "title": "Message 4: show me more",
-    "text": "Message four: show me more. Understand, ask and narrow are reused, and so are the rank scores. The mix step picks three new ideas, not the three already shown. Combine, check and explain run again, with fresh facts. Quick, because the search and the ranking are skipped. Give [ten|10] options, and the card gets a count of [ten|10]."
+    "text": "Message four: show me more. Understand and narrow are reused, and so are the rank scores. The mix step picks three new ideas, not the three already shown. Combine, check and explain run again, with fresh facts. Quick, because the search and the ranking are skipped. Give 10 options, and the card gets a count of 10."
    },
    {
-    "t": 83.9,
+    "t": 187.6,
     "title": "Message 5: scrap and restart",
-    "text": "Message five: scrap it, we're [ten|10] now. Who and find change. Veg and home by [ten|10] are carried over, said aloud. One question first, because a budget for [ten|10] changes the picks. Then a fresh search."
+    "text": "Message five: scrap it, we're 10 now. Find and the group size change. Veg and home by 10 are carried over, said aloud. One question first, because a budget for 10 changes the picks. Then a fresh search."
    },
    {
-    "t": 96.7,
+    "t": 201.2,
     "title": "Message 6: choose",
     "text": "Message six: let's do the second one. Find becomes dinner, chosen. Planning ends. The plan goes to the map, and tomorrow the learner asks how it went."
    },
    {
-    "t": 106.5,
+    "t": 210.9,
     "title": "Why the Cousin works this way",
-    "text": "Across six messages, the full run happened twice. The card keeps the machine steady. And reusing stages keeps follow-ups cheap."
+    "text": "Each algorithm does one job, at one step, in one order. The AI listens and explains. Code decides, checks and remembers."
    },
    {
-    "t": 115.2,
+    "t": 220.4,
     "title": "Takeaway",
-    "text": "One conversation. Each message runs only what it needs."
+    "text": "One message, five stages, every piece in its place."
    }
   ]
  },
  "V14": {
   "title": "The ladder: when data grows, the models",
-  "dur": 93.2,
+  "dur": 96.3,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "Rules first, models later",
     "text": "A rule is written by hand: if this, then that. A model learns from examples. With few examples, rules are safer. With many, a model can spot more."
    },
    {
-    "t": 10.8,
+    "t": 13.8,
     "title": "A new tea stall",
     "text": "A new tea stall has no customer history, so the owner uses a rule of thumb. Strong tea for office workers, ginger for evening walkers. A year on, her notebook shows patterns that no rule of thumb caught."
    },
    {
-    "t": 23.7,
+    "t": 26.7,
     "title": "Try it on half first",
     "text": "She tries the new idea on half her customers first. It sells more, so it wins. If it sold less, the old rule stays."
    },
    {
-    "t": 31.9,
+    "t": 35.0,
     "title": "Some jobs are never learned",
     "text": "Adding up the bill has one right answer, so it is never learned."
    },
    {
-    "t": 36.8,
+    "t": 39.9,
     "title": "In the app: day one, 50 people",
-    "text": "Day one, [fifty|50] people. The AI model listens and explains. The rest is code and rules."
+    "text": "Day one, 50 people. The AI model listens and explains. The rest is code and rules."
    },
    {
-    "t": 44.1,
+    "t": 47.1,
     "title": "Around 1,000 people",
-    "text": "Around a [thousand|1,000], embeddings match places by feel, statistics sharpen the ranking, and wild cards become a bandit."
+    "text": "Around a 1,000, embeddings match places by feel, statistics sharpen the ranking, and wild cards become a bandit."
    },
    {
-    "t": 52.6,
+    "t": 55.6,
     "title": "Around 5,000 people",
-    "text": "Around [five thousand|5,000], trees may take over ranking, but only if they win a live test."
+    "text": "Around 5,000, trees may take over ranking, but only if they win a live test."
    },
    {
-    "t": 58.9,
+    "t": 62.0,
     "title": "The live test decides",
     "text": "Half the evenings use the rule, half use the trees. The winner takes the cell. If the trees lose, the rule stays."
    },
    {
-    "t": 66.9,
+    "t": 69.9,
     "title": "Many cities: 50,000 people",
-    "text": "In many cities, a smaller tuned AI and [or tools|OR-Tools] join. Deeper models may help rank and track taste, only where they win."
+    "text": "In many cities, a smaller tuned AI and OR-Tools join. Deeper models may help rank and track taste, only where they win."
    },
    {
-    "t": 75.8,
+    "t": 78.8,
     "title": "Two rows stay code",
     "text": "Fences and facts, and the route solver: they have right answers, so they stay code."
    },
    {
-    "t": 82.0,
+    "t": 85.0,
     "title": "Why the Cousin climbs this way",
     "text": "So the Cousin starts with rules it can trust. A model has to earn its place with a live test."
    },
    {
-    "t": 88.3,
+    "t": 91.3,
     "title": "Takeaway",
     "text": "Start with rules. Earn each model with a live test."
    }
@@ -780,35 +820,35 @@
  },
  "V15": {
   "title": "The weekly loop",
-  "dur": 55.4,
+  "dur": 61.4,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
     "title": "A habit that happens outside the app",
     "text": "Some apps want your time on the screen. The Cousin wants a habit around going out: once or twice a week."
    },
    {
-    "t": 7.1,
+    "t": 10.1,
     "title": "Like a weekly cricket game",
     "text": "Think of a weekly cricket game with friends. A ping on Thursday, and a yes from everyone. You play, with the phone in your pocket. Next day, you laugh about the best moment."
    },
    {
-    "t": 17.6,
+    "t": 20.6,
     "title": "In the app: six steps, then again",
     "text": "Thursday evening, a nudge, when people plan the weekend. One line is enough to get a plan. Friends vote and commit. A plan with a time and a yes is far more likely to happen. Then the phone goes dark, and the city lights up. Next day, a recap card. People remember the best moment and the ending. The notebook grows, so the next plan is a little better."
    },
    {
-    "t": 39.3,
+    "t": 42.3,
     "title": "We count outings",
     "text": "We don't count minutes in the app. We count outings."
    },
    {
-    "t": 43.3,
+    "t": 46.4,
     "title": "Why the Cousin does it this way",
     "text": "The reward happens out in the city, not on the screen. So the app asks for little, and each outing makes the next plan better."
    },
    {
-    "t": 51.3,
+    "t": 54.3,
     "title": "Takeaway",
     "text": "The reward is the evening, not the screen."
    }
@@ -816,45 +856,45 @@
  },
  "V16": {
   "title": "The flywheel",
-  "dur": 63.8,
+  "dur": 69.8,
   "paras": [
    {
-    "t": 0.4,
+    "t": 0,
     "title": "A wheel that speeds up",
     "text": "A flywheel is a heavy wheel. Hard to start, but every push adds to its speed. In a business, each turn of the loop feeds the next."
    },
    {
-    "t": 9.2,
+    "t": 12.2,
     "title": "A neighbourhood tailor",
     "text": "Every fitting goes into a book of measurements. Next time the fit is better, so customers return and bring friends."
    },
    {
-    "t": 16.7,
+    "t": 19.7,
     "title": "A rival opens across the road",
     "text": "A rival can copy the sign and the scissors. Not the book."
    },
    {
-    "t": 21.5,
+    "t": 24.6,
     "title": "In the app: every outing teaches us",
     "text": "Every outing tells us something Google doesn't know. Who went, with whom, and whether they loved it."
    },
    {
-    "t": 28.0,
+    "t": 31.1,
     "title": "The Cousin's flywheel",
     "text": "More outings give more outcome data. That makes the next picks better, for you and for people like you. Better picks earn more trust, and trust brings more outings. Each turn is a little faster than the last."
    },
    {
-    "t": 40.8,
+    "t": 43.9,
     "title": "What a competitor can copy",
     "text": "A competitor copies the features. Buttons and screens clone across. But the wheel holds three things that can't be copied: years of outcomes, confirmed facts, and clubs."
    },
    {
-    "t": 52.3,
+    "t": 55.3,
     "title": "Why the Cousin is built this way",
     "text": "So the Cousin keeps a record of how every evening went. The longer it runs, the further ahead it gets."
    },
    {
-    "t": 59.2,
+    "t": 62.2,
     "title": "Takeaway",
     "text": "Features can be copied. Years of evenings can't."
    }
@@ -862,65 +902,65 @@
  },
  "V17": {
   "title": "A weekend at launch",
-  "dur": 85,
+  "dur": 91.0,
   "paras": [
    {
-    "t": 0.3,
+    "t": 0,
     "title": "One weekend, start to finish",
     "text": "Planning a weekend usually takes effort. Let's follow one, from Thursday to Sunday, with just one sentence of effort."
    },
    {
-    "t": 8.1,
+    "t": 11.1,
     "title": "A group chat, or one sentence",
     "text": "Think of planning dinner in a group chat. Where? Who's veg? What time? It goes on and on. Now imagine saying it once, and getting a plan back."
    },
    {
-    "t": 16.9,
+    "t": 19.9,
     "title": "Thursday evening",
     "text": "One well-timed nudge, not a feed to scroll."
    },
    {
-    "t": 21.4,
+    "t": 24.5,
     "title": "Saturday: one sentence",
-    "text": "One sentence is the whole input. Veg dinner for [four|4] tonight, under [five hundred rupees|₹500] each. Something sweet on the way home. Back by [ten|10]."
+    "text": "One sentence is the whole input. Veg dinner for 4 tonight, under ₹500 each. Something sweet on the way home. Back by 10."
    },
    {
-    "t": 30.7,
+    "t": 33.7,
     "title": "A checked plan in about a second",
-    "text": "A checked plan comes back in about a second. Kaveri at [seven thirty|7:30], Malli at [nine oh five|9:05], home by [nine forty|9:40]. Every fact is printed from data."
+    "text": "A checked plan comes back in about a second. Kaveri at 7:30, Malli at 9:05, home by 9:40. Every fact is printed from data."
    },
    {
-    "t": 40.8,
+    "t": 43.8,
     "title": "Friends join the plan",
     "text": "Friends join the plan, and three say they are in. A plan with people who said yes is far more likely to happen."
    },
    {
-    "t": 48.2,
+    "t": 51.2,
     "title": "Checked again before you leave",
-    "text": "Before you leave, hours and traffic are checked again. Still open. [Twelve minutes|12 minutes] away."
+    "text": "Before you leave, hours and traffic are checked again. Still open. 12 minutes away."
    },
    {
-    "t": 54.4,
+    "t": 57.4,
     "title": "Then the evening happens",
     "text": "Then the evening happens, out in the city, not on the screen."
    },
    {
-    "t": 61.0,
+    "t": 64.0,
     "title": "Sunday morning",
     "text": "One question: how was Kaveri? The answer becomes a tentative note in the notebook."
    },
    {
-    "t": 67.0,
+    "t": 70.0,
     "title": "Thursday to Sunday at a glance",
     "text": "That is the whole weekend, with one sentence in the middle."
    },
    {
-    "t": 72.5,
+    "t": 75.5,
     "title": "Why the Cousin does it this way",
     "text": "Places change, so facts are checked again just before you go. And one evening isn't proof, so the note stays tentative."
    },
    {
-    "t": 80.4,
+    "t": 83.4,
     "title": "Takeaway",
     "text": "Thursday to Sunday, with one sentence in the middle."
    }
