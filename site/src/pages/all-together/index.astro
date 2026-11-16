@@ -18,6 +18,21 @@ import { url } from '../../data/url';
     <div class="prose"><p>Behind every conversation sits one card: who is coming, what to find, the rules that must hold, and the tastes for tonight. The AI keeps the card up to date from each message. Code reads the card and decides which stages need to run again. A change of taste re-runs ranking. A new group size re-runs the search. A side question runs nothing.</p></div>
   </section>
   <section class="wrap row">
+    <p class="chapter">Fixed rows, free content</p>
+    <div class="prose">
+      <p>The card always has the same four rows. What goes in them changes with every request, however vague or specific. The AI fills the rows from the message, and code treats each row differently: musts become fences that remove places, likes become magnets that rank the rest.</p>
+      <div class="tbl" tabindex="0"><table><thead><tr><th>Row</th><th>What it holds</th><th>Veg dinner for 4</th><th>Something fun for 6 on Sunday</th></tr></thead><tbody>
+        <tr><td>Who</td><td>Who is coming</td><td>4 people</td><td>6 people</td></tr>
+        <tr><td>Find</td><td>What to look for</td><td>Dinner, dessert on the way</td><td>An activity</td></tr>
+        <tr><td>Must</td><td>Rules that always hold</td><td>Veg, ₹500 each, home by 10</td><td>Sunday, no alcohol, close by</td></tr>
+        <tr><td>Likes</td><td>Tastes, nice to have</td><td>South Indian, calm</td><td>Fun, plus what the notebook knows</td></tr>
+      </tbody></table></div>
+      <p>A request that can’t be written in these four rows is outside the product, and that is where <a href={url('algorithms/saying-no/')}>saying no</a> applies.</p>
+      <p><b>Card and tags are different things.</b> The card describes the <em>request</em>. Tags are a shared vocabulary that describes <em>places</em> (dessert, calm, South Indian). They meet in the Likes row: a taste on the card is a tag word, and code matches it to each place’s tags to score it. Musts are checked against facts about the place, not tags.</p>
+      <p class="muted">The row names are settled. The full list of rule types that can go under Must (budget, diet, group size, deadline and so on) is still being written.</p>
+    </div>
+  </section>
+  <section class="wrap row">
     <p class="chapter">Watch it work</p>
     <Video v="V13" />
   </section>
