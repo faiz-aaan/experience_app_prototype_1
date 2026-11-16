@@ -14,6 +14,38 @@ import { url } from '../../../data/url';
     </div>
   </header>
   <section class="wrap row">
+    <p class="chapter">What the notebook is</p>
+    <div class="prose">
+      <p class="h3">A short list of plain lines about you, that you can read.</p>
+      <p>A real cousin doesn’t ask what you eat every time you meet. The notebook is how the app remembers between conversations. Without it, every request starts from zero and the app is just a search box. It is written in plain lines, not hidden scores, so you can open it, fix a line or delete it.</p>
+      <div class="tbl" tabindex="0"><table><thead><tr><th>Page</th><th>What it keeps</th><th>Example lines</th></tr></thead><tbody>
+        <tr><td>Always</td><td>Tastes and needs that last</td><td>Vegetarian. Likes South Indian, calm places. Usually spends about ₹600. Hates long queues.</td></tr>
+        <tr><td>These weeks</td><td>Things true for now, which expire</td><td>Early gym, up at 5. Trying new cuisines this month.</td></tr>
+        <tr><td>Today</td><td>Tonight only, cleared after</td><td>Tired, keep it close. A friend’s birthday.</td></tr>
+        <tr><td>Recent outings</td><td>Where you went, with whom, how it went</td><td>Kaveri thali place, Friday, 4 friends: loved it.</td></tr>
+      </tbody></table></div>
+      <p><b>Each line also records</b> where it came from (you said it, or it was guessed from outings), when, how many times it has been seen, how sure we are, and when it expires. What you say beats what we guessed, and today beats always.</p>
+    </div>
+  </section>
+  <section class="wrap row">
+    <p class="chapter">How it fills and how it’s used</p>
+    <div class="pair">
+      <div class="prose"><p class="h3">Filled from</p><ul>
+        <li><b>A taste seed</b> on day one: a few “this or that” choices. In the simulation, this alone lifted first replies accepted from 57% to 70%.</li>
+        <li><b>What you mention</b> in chat (“joined a gym, up at 5 now”).</li>
+        <li><b>One question the next day</b>: “how was it?”</li>
+        <li><b>A 20-second catch-up</b> once a month.</li>
+      </ul></div>
+      <div class="prose"><p class="h3">Read by</p><ul>
+        <li><a href={url('algorithms/asking/')}>Asking</a>: anything already known is used silently, not asked.</li>
+        <li><a href={url('algorithms/fences-and-magnets/')}>Fences and magnets</a>: needs become fences, tastes become magnets.</li>
+        <li><a href={url('algorithms/rest-period/')}>Rest period</a>: recent outings rest before they come back.</li>
+        <li><a href={url('algorithms/wild-cards/')}>Wild cards</a>: which kinds of surprise this person enjoys.</li>
+      </ul></div>
+    </div>
+    <p class="muted">Still open: exactly what is stored, for how long, and how export and deletion work. These need deciding before launch.</p>
+  </section>
+  <section class="wrap row">
     <p class="chapter">In plain words</p>
     <div class="prose"><p>Every outing nudges the notebook a little. Nudges are small on purpose, so one bad evening can’t erase years of liking South Indian food. But that makes the notebook slow when life really changes: a new job, a new gym habit, a new baby. So there are three ways to catch a change, and they work best together.</p></div>
   </section>
