@@ -90,7 +90,7 @@ const dr: [string, string][] = [['full', 'Nothing'], ['full+drift', 'Surprise me
     <p class="chapter">When taste changes</p>
     <div class="tbl" tabindex="0">
       <table>
-        <thead><tr><th>How we notice</th><th class="num">Changes caught</th><th class="num">Loved it, after the change</th></tr></thead>
+        <thead><tr><th>How we notice</th><th class="num">Changes caught</th><th class="num">First pick accepted, after the change</th></tr></thead>
         <tbody>{dr.map(([k, n]) => { const r = (drift as any)[k]; return <tr><td>{n}</td><td class="num">{pc1(r.hit)}</td><td class="num">{pc(r.post)}</td></tr>; })}</tbody>
       </table>
     </div>
